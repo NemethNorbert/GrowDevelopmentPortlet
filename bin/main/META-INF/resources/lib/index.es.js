@@ -8,7 +8,12 @@ import GrowToolbar from './modules/GrowToolbar.es';
 
 const spritemap = Liferay.ThemeDisplay.getPathThemeImages();
 
-const GrowCardData = {};
+const GrowCardData = {
+	articleTitle : "Title",
+	articleContent: "content...",
+	tags: "tag1"
+};
+
 const GrowFavouritesCardData = {};
 const GrowListData = {};
 const GrowToolbarData = {};
@@ -17,7 +22,10 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				<GrowCard spritemap={spritemap}/>
+				<GrowCard
+					spritemap={spritemap}
+					articleTitle={GrowCardData.articleTitle}
+				/>
 				<GrowFavouritesCard spritemap={spritemap}/>
 				<GrowList spritemap={spritemap}/>
 				<GrowToolbar spritemap={spritemap}/>

@@ -8,7 +8,17 @@ import GrowToolbar from './modules/GrowToolbar.es';
 
 const spritemap = Liferay.ThemeDisplay.getPathThemeImages();
 
-const GrowCardData = {};
+const GrowCardData = {
+	articleAuthor: "Gábor Ambrózy",
+	authorAvatar: "https://media.licdn.com/dms/image/C4D03AQGjiNQEjJYKEg/profile-displayphoto-shrink_200_200/0?e=1560988800&amp;v=beta&amp;t=6Ky9UyEChyrgiMTqRt4nyKqpi7VVyNAR69cmU2yZ3QY",
+	createDate: "01.01.2019",
+	articleTitle: "Respect badge",
+	articleContent: "A respect badge can be given by anyone to anyone. You can give 1 badge per month. You can use the Respect badge page to add badges. To give a respect badge, @ mention the name in the table, write your name to the From column and write the reason, why do you give it. The reason has to be for a \"superpower\", something why you respect the other person and something which you would like to learn from them. For Support Hungary 2016Q3 goals, you have to give min. 1 respect badge until Sept 30. If there will be need, we will add gamification to Grow later on.",
+	tags: ["badge", "gamification", "respect", "test1", "test2"],
+	readCount: "626",
+	articleCategory: "Share"
+};
+
 const GrowFavouritesCardData = {};
 const GrowListData = {};
 const GrowToolbarData = {};
@@ -17,7 +27,17 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				<GrowCard spritemap={spritemap}/>
+				<GrowCard
+					spritemap={spritemap}
+					articleAuthor={GrowCardData.articleAuthor}
+					authorAvatar={GrowCardData.authorAvatar}
+					createDate={GrowCardData.createDate}
+					articleTitle={GrowCardData.articleTitle}
+					articleContent={GrowCardData.articleContent}
+					tags={GrowCardData.tags}
+					readCount={GrowCardData.readCount}
+					articleCategory={GrowCardData.articleCategory}
+				/>
 				<GrowFavouritesCard spritemap={spritemap}/>
 				<GrowList spritemap={spritemap}/>
 				<GrowToolbar spritemap={spritemap}/>

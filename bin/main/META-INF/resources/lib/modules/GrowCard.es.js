@@ -11,7 +11,7 @@ const GrowCard = (props) => {
                                 <input className="custom-control-input" type="checkbox"/>
                                 <span className="custom-control-label"></span>
                                 <img alt="thumbnail"className="aspect-ratio-item-center-middle aspect-ratio-item-fluid" src="https://via.placeholder.com/300x200" />
-                                <span className="sticker sticker-bottom-left sticker-danger rounded-circle">JPG</span>
+                                <span className="sticker sticker-bottom-left sticker-danger rounded-circle">{props.articleTitle}</span>
                             </label>
                         </div>
                     </div>
