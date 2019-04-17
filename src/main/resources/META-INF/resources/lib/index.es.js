@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import GrowList from './modules/GrowList.es';
+// import GrowList from './modules/GrowList.es';
 import GrowCard from './modules/GrowCard.es';
-import GrowFavouritesCard from './modules/GrowFavouritesCard.es';
-import GrowToolbar from './modules/GrowToolbar.es';
+// import GrowFavouritesCard from './modules/GrowFavouritesCard.es';
+// import GrowToolbar from './modules/GrowToolbar.es';
 
 const spritemap = Liferay.ThemeDisplay.getPathThemeImages();
 
@@ -19,9 +19,9 @@ const GrowCardData = {
 	articleCategory: "Share"
 };
 
-const GrowFavouritesCardData = {};
-const GrowListData = {};
-const GrowToolbarData = {};
+// const GrowFavouritesCardData = {};
+// const GrowListData = {};
+// const GrowToolbarData = {};
 
 class App extends React.Component {
 	render() {
@@ -38,9 +38,9 @@ class App extends React.Component {
 					readCount={GrowCardData.readCount}
 					articleCategory={GrowCardData.articleCategory}
 				/>
-				<GrowFavouritesCard spritemap={spritemap}/>
+				{/* <GrowFavouritesCard spritemap={spritemap}/>
 				<GrowList spritemap={spritemap}/>
-				<GrowToolbar spritemap={spritemap}/>
+				<GrowToolbar spritemap={spritemap}/> */}
 			</div>
 		);
 	}
