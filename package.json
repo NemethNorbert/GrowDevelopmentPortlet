@@ -12,7 +12,7 @@
 	"main": "lib/index.es.js",
 	"name": "GrowFavouritesPortlet",
 	"scripts": {
-		"build": "babel --source-maps -d build/resources/main/META-INF/resources src/main/resources/META-INF/resources && liferay-npm-bundler && cp build/libs/growfavouritesportlet-1.0.0.jar ../liferay-dxp-7.1.10-ga1/deploy/"
+		"build": "babel --source-maps -d build/resources/main/META-INF/resources src/main/resources/META-INF/resources && liferay-npm-bundler"
 	},
 	"version": "1.0.0"
 }
