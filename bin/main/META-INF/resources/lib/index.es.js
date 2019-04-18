@@ -10,7 +10,7 @@ const spritemap = Liferay.ThemeDisplay.getPathThemeImages();
 
 const GrowCardData = {
 	articleAuthor: "Gábor Ambrózy",
-	authorAvatar: "https://media.licdn.com/dms/image/C4D03AQGjiNQEjJYKEg/profile-displayphoto-shrink_200_200/0?e=1560988800&amp;v=beta&amp;t=6Ky9UyEChyrgiMTqRt4nyKqpi7VVyNAR69cmU2yZ3QY",
+	authorAvatar: "/o/GrowFavouritesPortlet/images/0.jpeg",
 	createDate: "01.01.2019",
 	articleTitle: "Respect badge",
 	articleContent: "A respect badge can be given by anyone to anyone. You can give 1 badge per month. You can use the Respect badge page to add badges. To give a respect badge, @ mention the name in the table, write your name to the From column and write the reason, why do you give it. The reason has to be for a \"superpower\", something why you respect the other person and something which you would like to learn from them. For Support Hungary 2016Q3 goals, you have to give min. 1 respect badge until Sept 30. If there will be need, we will add gamification to Grow later on.",
