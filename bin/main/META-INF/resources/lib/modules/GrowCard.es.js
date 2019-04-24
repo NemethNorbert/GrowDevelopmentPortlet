@@ -2,7 +2,7 @@ import React from 'react';
 
 const GrowCard = (props) => {
     return(
-        <div className="col-lg-12">
+        <div className="col-lg-6">
             <div className="card">
                 <div className="card-body">
 
