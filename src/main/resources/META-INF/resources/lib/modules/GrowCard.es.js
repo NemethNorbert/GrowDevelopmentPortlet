@@ -67,6 +67,17 @@ const GrowCard = (props) => {
                     </div>
                 </div>
 
+                <div className="autofit-row autofit-padded text-center">
+                    <div className="autofit-col autofit-col-expand">
+                        <div className="autofit-section">
+                        <svg className="lexicon-icon lexicon-icon-share inline-item inline-item-before" focusable="false" role="presentation">
+                                <use xlinkHref={props.spritemap+"/clay/icons.svg#share"} />
+                        </svg>
+                        <span>Share</span>
+                        </div>
+                    </div>
+				</div>
+
         </div>
         </div>
         </div>
