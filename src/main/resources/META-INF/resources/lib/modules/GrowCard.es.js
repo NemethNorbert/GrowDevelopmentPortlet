@@ -11,7 +11,7 @@ const GrowCard = props => {
                 <img
                   alt="Author's thumbnail"
                   className="img-fluid sticker sticker-primary sticker-xl rounded-circle"
-                  src={props.authorAvatar}
+                  src={props.articleAuthorAvatar}
                 />
               </div>
             </div>
@@ -19,7 +19,7 @@ const GrowCard = props => {
               <div className="autofit-section text-secondary">
                 <strong>{props.articleAuthor}</strong>
                 <br />
-                <span>{props.createDate}</span>
+                <span>{props.articleCreateDate}</span>
               </div>
             </div>
             <div className="autofit-col">
@@ -63,7 +63,7 @@ const GrowCard = props => {
           <div className="autofit-row autofit-padded">
             <div className="autofit-col autofit-col-expand">
               <div className="autofit-section">
-                {props.articletags.map((tag, index) => {
+                {props.articleTags.map((tag, index) => {
                   return (
                     <span key={index} className="label label-lg">
                       <span className="label-info label-item label-item-expand">
@@ -83,7 +83,7 @@ const GrowCard = props => {
                 >
                   <use xlinkHref={props.spritemap + "/clay/icons.svg#view"} />
                 </svg>
-                <span>{props.readCount}</span>
+                <span>{props.articleReadCount}</span>
               </div>
             </div>
           </div>

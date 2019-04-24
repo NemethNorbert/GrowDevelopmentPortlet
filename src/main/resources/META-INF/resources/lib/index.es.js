@@ -30,12 +30,12 @@ class App extends React.Component {
 				<GrowCard
 					spritemap={spritemap}
 					articleAuthor={GrowCardData.articleAuthor}
-					authorAvatar={GrowCardData.authorAvatar}
-					createDate={GrowCardData.createDate}
+					articleAuthorAvatar={GrowCardData.authorAvatar}
+					articleCreateDate={GrowCardData.createDate}
 					articleTitle={GrowCardData.articleTitle}
 					articleContent={GrowCardData.articleContent}
-					tags={GrowCardData.tags}
-					readCount={GrowCardData.readCount}
+					articleTags={GrowCardData.tags}
+					articleReadCount={GrowCardData.readCount}
 					articleCategory={GrowCardData.articleCategory}
 				/>
 				{/* <GrowFavouritesCard spritemap={spritemap}/>
