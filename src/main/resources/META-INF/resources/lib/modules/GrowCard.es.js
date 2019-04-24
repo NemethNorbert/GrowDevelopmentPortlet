@@ -59,9 +59,10 @@ const GrowCard = (props) => {
 					</div>
                     <div className="autofit-col autofit-col-expand">
                         <div className="autofit-section">
-                        <svg className="lexicon-icon lexicon-icon-view inline-item" focusable="false" role="presentation">
+                        <svg className="lexicon-icon lexicon-icon-view inline-item inline-item-before" focusable="false" role="presentation">
                                 <use xlinkHref={props.spritemap+"/clay/icons.svg#view"} />
-                            </svg>
+                        </svg>
+                        <span>{props.readCount}</span>
                         </div>
                     </div>
                 </div>
