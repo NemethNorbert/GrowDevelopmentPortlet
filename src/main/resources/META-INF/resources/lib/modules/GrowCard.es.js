@@ -12,24 +12,38 @@ const GrowCard = (props) => {
 						<img alt="Author's thumbnail" className="img-fluid sticker sticker-primary sticker-xl rounded-circle" src={props.authorAvatar} />
 						</div>
 					</div>
-				<div className="autofit-col autofit-col-expand">
-					<div className="autofit-section">
-						<span>Author</span>
-						<br />
-						<span>Date</span>
-					</div>
+                    <div className="autofit-col autofit-col-expand">
+                        <div className="autofit-section">
+                            <span>Author</span>
+                            <br />
+                            <span>Date</span>
+                        </div>
+                    </div>
+                    <div className="autofit-col">
+                        <div className="autofit-section">
+                            <svg className="lexicon-icon lexicon-icon-star-o inline-item inline-item-before" focusable="false" role="presentation">
+                                <use xlinkHref={props.spritemap+"/clay/icons.svg#star-o"} />
+                            </svg>
+                            <svg className="lexicon-icon lexicon-icon-thumbs-up" focusable="false" role="presentation">
+                                <use xlinkHref={props.spritemap+"/clay/icons.svg#thumbs-up"} />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <div className="autofit-row autofit-padded">
+                    <div className="autofit-col autofit-col-expand">
+                        <div className="autofit-section">
+                            <h3>{props.articleTitle}</h3>
+                        </div>
+                    </div>
 				</div>
-				<div className="autofit-col">
-					<div className="autofit-section">
-                        <svg className="lexicon-icon lexicon-icon-star-o inline-item inline-item-before" focusable="false" role="presentation">
-                            <use xlinkHref={props.spritemap+"/clay/icons.svg#star-o"} />
-                        </svg>
-                        <svg className="lexicon-icon lexicon-icon-thumbs-up" focusable="false" role="presentation">
-                            <use xlinkHref={props.spritemap+"/clay/icons.svg#thumbs-up"} />
-                        </svg>
-					</div>
-				</div>
-		</div>
+
+                </div>
+            </div>
+        </div>
+    );
+}
 
                         {/* <div className="autofit-row autofit-padded">
 
@@ -51,11 +65,5 @@ const GrowCard = (props) => {
                                 </div>
                             </div>
                         </div> */}
-
-                </div>
-            </div>
-        </div>
-    );
-}
 
 export default GrowCard;
