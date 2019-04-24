@@ -6,7 +6,7 @@ const GrowCard = (props) => {
             <div className="card">
                 <div className="card-body">
 
-                <div className="autofit-row autofit-padded">
+                <div className="autofit-row autofit-padded mb-2">
 					<div className="autofit-col">
 						<div className="autofit-section">
 						<img alt="Author's thumbnail" className="img-fluid sticker sticker-primary sticker-xl rounded-circle" src={props.authorAvatar} />
@@ -30,7 +30,7 @@ const GrowCard = (props) => {
                         </div>
                     </div>
                 </div>
-                
+
                 <div className="autofit-row autofit-padded">
                     <div className="autofit-col autofit-col-expand">
                         <div className="autofit-section">
