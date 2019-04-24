@@ -50,9 +50,9 @@ const GrowCard = (props) => {
                 <div className="autofit-row autofit-padded">
 					<div className="autofit-col autofit-col-expand">
 						<div className="autofit-section">
-                        {props.tags.map((value, index) => {
-                                    return <span className="label label-lg">
-                                    <span key={index} className="label-info label-item label-item-expand">{value}</span>
+                        {props.articletags.map((tag, index) => {
+                                    return <span key={index} className="label label-lg">
+                                    <span className="label-info label-item label-item-expand">{tag}</span>
                                     </span>
                                 })}
 						</div>
