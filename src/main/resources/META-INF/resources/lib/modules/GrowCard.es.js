@@ -21,8 +21,12 @@ const GrowCard = (props) => {
 				</div>
 				<div className="autofit-col">
 					<div className="autofit-section">
-						<h6>Like - Save</h6>
-						<svg className="lexicon-icon lexicon-icon-star-o"></svg>
+                        <svg className="lexicon-icon lexicon-icon-star-o" focusable="false" role="presentation">
+                            <use xlinkHref={props.spritemap+"/clay/icons.svg#star-o"} />
+                        </svg>
+                        <svg className="lexicon-icon lexicon-icon-thumbs-up" focusable="false" role="presentation">
+                            <use xlinkHref={props.spritemap+"/clay/icons.svg#thumbs-up"} />
+                        </svg>
 					</div>
 				</div>
 		</div>
