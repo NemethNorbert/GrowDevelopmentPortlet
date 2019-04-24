@@ -48,7 +48,7 @@ const GrowCard = (props) => {
 				</div>
 
                 <div className="autofit-row autofit-padded">
-					<div className="autofit-col">
+					<div className="autofit-col autofit-col-expand">
 						<div className="autofit-section">
                         {props.tags.map((value, index) => {
                                     return <span className="label label-lg">
@@ -57,7 +57,7 @@ const GrowCard = (props) => {
                                 })}
 						</div>
 					</div>
-                    <div className="autofit-col autofit-col-expand">
+                    <div className="autofit-col">
                         <div className="autofit-section">
                         <svg className="lexicon-icon lexicon-icon-view inline-item inline-item-before" focusable="false" role="presentation">
                                 <use xlinkHref={props.spritemap+"/clay/icons.svg#view"} />
