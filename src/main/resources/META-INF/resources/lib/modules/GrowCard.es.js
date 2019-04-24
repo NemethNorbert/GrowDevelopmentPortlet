@@ -47,31 +47,22 @@ const GrowCard = (props) => {
                     </div>
 				</div>
 
+                <div className="autofit-row autofit-padded">
+                    <div className="autofit-col autofit-col-expand">
+                        <div className="autofit-float autofit-row">
+                                {props.tags.map((value, index) => {
+                                    return <span className="label label-lg">
+                                    <span key={index} className="label-info label-item label-item-expand">{value}</span>
+                                    </span>
+                                })}
+                        </div>
+                    </div>
                 </div>
+
             </div>
+        </div>
         </div>
     );
 }
-
-                        {/* <div className="autofit-row autofit-padded">
-
-                            <div className="autofit-col autofit-col-expand">
-                                <div className="autofit-section">
-                                <img alt="Author's thumbnail" className="img-fluid sticker sticker-primary rounded-circle" src={props.authorAvatar} />
-                                </div>
-
-                                <div className="autofit-col autofit-col-expand">
-                                <div className="autofit-section">
-                                    <h6>Author-date</h6>
-                                    </div>
-                                </div>
-
-                                <div className="autofit-col autofit-col-expand">
-                                    <div className="autofit-section">
-                                        <h6>star - like</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> */}
 
 export default GrowCard;

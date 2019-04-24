@@ -47,6 +47,13 @@ const GrowCard = (props) => {
                     </div>
 				</div>
 
+                <div className="autofit-row autofit-padded">
+                    <div className="autofit-col autofit-col-expand">
+                    <div>
+                        {props.tags.map((value, index) => {
+                            return <div key={index} className="label label-info label-item label-item-expand">{value}</div>
+                        })}
+                    </div>
                 </div>
             </div>
         </div>
