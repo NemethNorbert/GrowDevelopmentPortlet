@@ -39,6 +39,14 @@ const GrowCard = (props) => {
                     </div>
 				</div>
 
+                <div className="autofit-row autofit-padded">
+                    <div className="autofit-col autofit-col-expand">
+                        <div className="autofit-section">
+                            <div className="text-secondary">{props.articleContent}</div>
+                        </div>
+                    </div>
+				</div>
+
                 </div>
             </div>
         </div>
