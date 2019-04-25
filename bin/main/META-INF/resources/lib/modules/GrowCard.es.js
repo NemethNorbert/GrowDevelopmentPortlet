@@ -50,14 +50,16 @@ class GrowCard extends React.Component {
                   >
                     {this.state.star && (
                       <GrowIcon
-                        spritemap={this.props.spritemap}
-                        iconName="star"
+                      spritemap={this.props.spritemap}
+                      classes="lexicon-icon inline-item"                        
+                      iconName="star"
                       />
                     )}
                     {this.state.star == false && (
                       <GrowIcon
-                        spritemap={this.props.spritemap}
-                        iconName="star-o"
+                      spritemap={this.props.spritemap}
+                      classes="lexicon-icon inline-item"                        
+                      iconName="star-o"
                       />
                     )}
                   </button>

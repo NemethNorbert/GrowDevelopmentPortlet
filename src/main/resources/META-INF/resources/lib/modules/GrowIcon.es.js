@@ -9,7 +9,7 @@ class GrowIcon extends React.Component {
        
         return (
             <svg
-            className={"lexicon-icon lexicon-icon-" + this.props.iconName + " inline-item"}
+            className={this.props.classes  + " lexicon-icon-" + this.props.iconName}
             focusable="false"
             role="presentation"
             >
