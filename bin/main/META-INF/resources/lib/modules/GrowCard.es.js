@@ -115,20 +115,20 @@ class GrowCard extends React.Component {
                 </div>
               </div>
 
-            <div className="autofit-col">
-              <div className="autofit-section">
-                <svg
-                  className="lexicon-icon lexicon-icon-view inline-item inline-item-before"
-                  focusable="false"
-                  role="presentation"
-                >
-                  <use
-                    xlinkHref={this.props.spritemap + "/clay/icons.svg#view"}
-                  />
-                </svg>
-                <span>{this.props.articleReadCount}</span>
+              <div className="autofit-col">
+                <div className="autofit-section">
+                  <svg
+                    className="lexicon-icon lexicon-icon-view inline-item inline-item-before"
+                    focusable="false"
+                    role="presentation"
+                  >
+                    <use
+                      xlinkHref={this.props.spritemap + "/clay/icons.svg#view"}
+                    />
+                  </svg>
+                  <span>{this.props.articleReadCount}</span>
+                </div>
               </div>
-            </div>
             </div>
 
             <div className="autofit-row autofit-padded text-center">
