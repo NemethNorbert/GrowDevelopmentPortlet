@@ -2,23 +2,25 @@ import React from "react";
 import GrowIcon from "./GrowIcon.es";
 
 class GrowCard extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state= {
-			star: false
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      star: false,
+      like: false
+    };
     // This binding is necessary to make `this` work in the callback
-		this.triggerSocialAction = this.triggerSocialAction.bind(this);
+    this.triggerSocialAction = this.triggerSocialAction.bind(this);
   }
-  
+
   triggerSocialAction() {
-		this.setState(state => ({
-			star: !state.star
-		  }));
-    }
-    
+    this.setState(state => ({
+      star: !state.star,
+      like: !state.like
+    }));
+  }
+
   render() {
-		return (
+    return (
       <div className="col-lg-6">
         <div className="card">
           <div className="card-body">
@@ -41,29 +43,41 @@ class GrowCard extends React.Component {
               </div>
               <div className="autofit-col">
                 <div className="autofit-section">
-                <button className="btn btn-outline-secondary btn-outline-borderless" type="button" onClick={this.triggerSocialAction}>
-                {this.state.star &&
-                  <GrowIcon
-                  spritemap= {this.props.spritemap}
-                  iconName= "star" 
-                  />
-                }
-                {this.state.star == false &&
-                  <GrowIcon
-                  spritemap= {this.props.spritemap}
-                  iconName= "star-o"
-                  />
-                }
-                  </button>
-                  <svg
-                    className="lexicon-icon lexicon-icon-thumbs-up"
-                    focusable="false"
-                    role="presentation"
+                  <button
+                    className="btn btn-outline-secondary btn-outline-borderless"
+                    type="button"
+                    onClick={this.triggerSocialAction}
                   >
-                    <use
-                      xlinkHref={this.props.spritemap + "/clay/icons.svg#thumbs-up"}
-                    />
-                  </svg>
+                    {this.state.star && (
+                      <GrowIcon
+                        spritemap={this.props.spritemap}
+                        iconName="star"
+                      />
+                    )}
+                    {this.state.star == false && (
+                      <GrowIcon
+                        spritemap={this.props.spritemap}
+                        iconName="star-o"
+                      />
+                    )}
+                  </button>
+                  <button
+                    className="btn btn-outline-secondary btn-outline-borderless"
+                    type="button"
+                    onClick={this.triggerSocialAction}
+                  >
+                    <svg
+                      className="lexicon-icon lexicon-icon-thumbs-up"
+                      focusable="false"
+                      role="presentation"
+                    >
+                      <use
+                        xlinkHref={
+                          this.props.spritemap + "/clay/icons.svg#thumbs-up"
+                        }
+                      />
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -79,7 +93,9 @@ class GrowCard extends React.Component {
             <div className="autofit-row autofit-padded">
               <div className="autofit-col autofit-col-expand">
                 <div className="autofit-section">
-                  <div className="text-secondary">{this.props.articleContent}</div>
+                  <div className="text-secondary">
+                    {this.props.articleContent}
+                  </div>
                 </div>
               </div>
             </div>
@@ -95,21 +111,24 @@ class GrowCard extends React.Component {
                         </span>
                       </span>
                     );
-                  })}star= {this.state.start} 
-
-              </div>
-              <div className="autofit-col">
-                <div className="autofit-section">
-                  <svg
-                    className="lexicon-icon lexicon-icon-view inline-item inline-item-before"
-                    focusable="false"
-                    role="presentation"
-                  >
-                    <use xlinkHref={this.props.spritemap + "/clay/icons.svg#view"} />
-                  </svg>
-                  <span>{this.props.articleReadCount}</span>
+                  })}
                 </div>
               </div>
+
+            <div className="autofit-col">
+              <div className="autofit-section">
+                <svg
+                  className="lexicon-icon lexicon-icon-view inline-item inline-item-before"
+                  focusable="false"
+                  role="presentation"
+                >
+                  <use
+                    xlinkHref={this.props.spritemap + "/clay/icons.svg#view"}
+                  />
+                </svg>
+                <span>{this.props.articleReadCount}</span>
+              </div>
+            </div>
             </div>
 
             <div className="autofit-row autofit-padded text-center">
@@ -120,7 +139,9 @@ class GrowCard extends React.Component {
                     focusable="false"
                     role="presentation"
                   >
-                    <use xlinkHref={this.props.spritemap + "/clay/icons.svg#share"} />
+                    <use
+                      xlinkHref={this.props.spritemap + "/clay/icons.svg#share"}
+                    />
                   </svg>
                   <span>{this.props.articleCategory}</span>
                 </div>
@@ -128,7 +149,6 @@ class GrowCard extends React.Component {
             </div>
           </div>
         </div>
-      </div>
       </div>
     );
   }
