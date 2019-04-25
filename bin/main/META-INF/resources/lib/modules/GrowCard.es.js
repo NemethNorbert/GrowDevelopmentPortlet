@@ -5,7 +5,7 @@ class GrowCard extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state= {
-			star: true
+			star: false
     }
     // This binding is necessary to make `this` work in the callback
 		this.triggerSocialAction = this.triggerSocialAction.bind(this);
