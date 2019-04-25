@@ -9,12 +9,17 @@ class GrowCard extends React.Component {
       like: false
     };
     // This binding is necessary to make `this` work in the callback
-    this.triggerSocialAction = this.triggerSocialAction.bind(this);
+    this.starContent = this.starContent.bind(this);
+    this.likeContent = this.likeContent.bind(this);
   }
 
-  triggerSocialAction() {
+  starContent() {
     this.setState(state => ({
-      star: !state.star,
+      star: !state.star
+    }));
+  }
+  likeContent() {
+    this.setState(state => ({
       like: !state.like
     }));
   }
@@ -46,7 +51,7 @@ class GrowCard extends React.Component {
                   <button
                     className="btn btn-outline-secondary btn-outline-borderless"
                     type="button"
-                    onClick={this.triggerSocialAction}
+                    onClick={this.starContent}
                   >
                     {this.state.star && (
                       <GrowIcon
@@ -63,22 +68,26 @@ class GrowCard extends React.Component {
                       />
                     )}
                   </button>
+
                   <button
                     className="btn btn-outline-secondary btn-outline-borderless"
                     type="button"
-                    onClick={this.triggerSocialAction}
+                    onClick={this.likeContent}
                   >
-                    <svg
-                      className="lexicon-icon lexicon-icon-thumbs-up"
-                      focusable="false"
-                      role="presentation"
-                    >
-                      <use
-                        xlinkHref={
-                          this.props.spritemap + "/clay/icons.svg#thumbs-up"
-                        }
+                    {this.state.like && (
+                      <GrowIcon
+                      spritemap={this.props.spritemap}
+                      classes="lexicon-icon thumbs-up-liked"                        
+                      iconName="thumbs-up"
                       />
-                    </svg>
+                    )}
+                    {this.state.like == false && (
+                      <GrowIcon
+                      spritemap={this.props.spritemap}
+                      classes="lexicon-icon"                        
+                      iconName="thumbs-up"
+                      />
+                    )}
                   </button>
                 </div>
               </div>
