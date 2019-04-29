@@ -111,55 +111,12 @@ class GrowCard extends React.Component {
                 </div>
               </div>
             </div>
-
-            <div className="autofit-row autofit-padded">
-              <div className="autofit-col autofit-col-expand">
-                <div className="autofit-section">
-                  {this.props.articleTags.map((tag, index) => {
-                    return (
-                      <span key={index} className="label label-lg">
-                        <span className="label-info label-item label-item-expand">
-                          {tag}
-                        </span>
-                      </span>
-                    );
-                  })}
-                </div>
-              </div>
-
-              <div className="autofit-col">
-                <div className="autofit-section">
-                  <svg
-                    className="lexicon-icon lexicon-icon-view inline-item inline-item-before"
-                    focusable="false"
-                    role="presentation"
-                  >
-                    <use
-                      xlinkHref={this.props.spritemap + "/clay/icons.svg#view"}
-                    />
-                  </svg>
-                  <span>{this.props.articleReadCount}</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="autofit-row autofit-padded text-center">
-              <div className="autofit-col autofit-col-expand">
-                <div className="autofit-section">
-                  <svg
-                    className="lexicon-icon lexicon-icon-share inline-item inline-item-before"
-                    focusable="false"
-                    role="presentation"
-                  >
-                    <use
-                      xlinkHref={this.props.spritemap + "/clay/icons.svg#share"}
-                    />
-                  </svg>
-                  <span>{this.props.articleCategory}</span>
-                  <GrowCardFooter />
-                </div>
-              </div>
-            </div>
+                  <GrowCardFooter 
+                  articleTags={this.props.articleTags}
+                  spritemap={this.props.spritemap}
+                  articleReadCount={this.props.articleReadCount}
+                  articleCategory={this.props.articleCategory}
+                  />
           </div>
         </div>
       </div>
