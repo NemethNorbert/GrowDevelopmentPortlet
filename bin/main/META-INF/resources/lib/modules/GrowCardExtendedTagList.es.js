@@ -1,6 +1,7 @@
 import React from "react";
 
 const tagsToDisplay = 3;
+let remainingTags = [];
 
 class GrowCardExtendedTagList extends React.Component {
   constructor(props) {
@@ -18,9 +19,19 @@ class GrowCardExtendedTagList extends React.Component {
             </span>
           );
         })}
-        <span className="label label-lg">
-          <span className="label-info label-item label-item-expand">+ {(this.props.articleTags.length)- tagsToDisplay}</span>
+        {this.props.articleTags.slice(tagsToDisplay).forEach(function(item) {
+          remainingTags.push(" " + item);
+        })}
+        <span
+          className="label label-lg"
+          data-toggle="tooltip"
+          data-placement="right"
+          title={remainingTags}
+        >
+          <span className="label-info label-item label-item-expand">
+            + {this.props.articleTags.length - tagsToDisplay}
           </span>
+        </span>
       </div>
     );
   }
