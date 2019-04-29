@@ -56,16 +56,16 @@ class GrowCard extends React.Component {
                   >
                     {this.state.star && (
                       <GrowIcon
-                      spritemap={this.props.spritemap}
-                      classes="lexicon-icon inline-item"                        
-                      iconName="star"
+                        spritemap={this.props.spritemap}
+                        classes="lexicon-icon inline-item"
+                        iconName="star"
                       />
                     )}
                     {this.state.star == false && (
                       <GrowIcon
-                      spritemap={this.props.spritemap}
-                      classes="lexicon-icon inline-item"                        
-                      iconName="star-o"
+                        spritemap={this.props.spritemap}
+                        classes="lexicon-icon inline-item"
+                        iconName="star-o"
                       />
                     )}
                   </button>
@@ -77,16 +77,16 @@ class GrowCard extends React.Component {
                   >
                     {this.state.like && (
                       <GrowIcon
-                      spritemap={this.props.spritemap}
-                      classes="lexicon-icon thumbs-up-liked"                        
-                      iconName="thumbs-up"
+                        spritemap={this.props.spritemap}
+                        classes="lexicon-icon thumbs-up-liked"
+                        iconName="thumbs-up"
                       />
                     )}
                     {this.state.like == false && (
                       <GrowIcon
-                      spritemap={this.props.spritemap}
-                      classes="lexicon-icon"                        
-                      iconName="thumbs-up"
+                        spritemap={this.props.spritemap}
+                        classes="lexicon-icon"
+                        iconName="thumbs-up"
                       />
                     )}
                   </button>
@@ -111,12 +111,12 @@ class GrowCard extends React.Component {
                 </div>
               </div>
             </div>
-                  <GrowCardFooter 
-                  articleTags={this.props.articleTags}
-                  spritemap={this.props.spritemap}
-                  articleReadCount={this.props.articleReadCount}
-                  articleCategory={this.props.articleCategory}
-                  />
+            <GrowCardFooter
+              articleTags={this.props.articleTags}
+              spritemap={this.props.spritemap}
+              articleReadCount={this.props.articleReadCount}
+              articleCategory={this.props.articleCategory}
+            />
           </div>
         </div>
       </div>

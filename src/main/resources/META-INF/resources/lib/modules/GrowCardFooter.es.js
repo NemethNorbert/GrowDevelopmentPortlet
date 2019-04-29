@@ -1,5 +1,7 @@
 import React from "react";
 import GrowIcon from "./GrowIcon.es";
+import GrowCardSimpleTagList from "./GrowCardSimpleTagList.es";
+import GrowCardExtendedTagList from "./GrowCardExtendedTagList.es";
 
 class GrowCardFooter extends React.Component {
   constructor(props) {
@@ -10,17 +12,12 @@ class GrowCardFooter extends React.Component {
       <div className="GrowCardFooter">
         <div className="autofit-row autofit-padded">
           <div className="autofit-col autofit-col-expand">
-            <div className="autofit-section">
-              {this.props.articleTags.map((tag, index) => {
-                return (
-                  <span key={index} className="label label-lg">
-                    <span className="label-info label-item label-item-expand">
-                      {tag}
-                    </span>
-                  </span>
-                );
-              })}
-            </div>
+            {this.props.articleTags.length > 3 && (
+              <GrowCardExtendedTagList articleTags={this.props.articleTags} />
+            )}
+            {this.props.articleTags.length <= 3 && (
+              <GrowCardSimpleTagList articleTags={this.props.articleTags} />
+            )}
           </div>
 
           <div className="autofit-col">
