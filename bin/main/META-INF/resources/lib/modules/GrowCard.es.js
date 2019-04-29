@@ -10,16 +10,16 @@ class GrowCard extends React.Component {
       like: false
     };
     // This binding is necessary to make `this` work in the callback
-    this.starContent = this.starContent.bind(this);
-    this.likeContent = this.likeContent.bind(this);
+    this.toggleStarContent = this.toggleStarContent.bind(this);
+    this.toggleLikeContent = this.toggleLikeContent.bind(this);
   }
 
-  starContent() {
+  toggleStarContent() {
     this.setState(state => ({
       star: !state.star
     }));
   }
-  likeContent() {
+  toggleLikeContent() {
     this.setState(state => ({
       like: !state.like
     }));
@@ -52,7 +52,7 @@ class GrowCard extends React.Component {
                   <button
                     className="btn btn-outline-secondary btn-outline-borderless"
                     type="button"
-                    onClick={this.starContent}
+                    onClick={this.toggleStarContent}
                   >
                     {this.state.star && (
                       <GrowIcon
@@ -73,7 +73,7 @@ class GrowCard extends React.Component {
                   <button
                     className="btn btn-outline-secondary btn-outline-borderless"
                     type="button"
-                    onClick={this.likeContent}
+                    onClick={this.toggleLikeContent}
                   >
                     {this.state.like && (
                       <GrowIcon
