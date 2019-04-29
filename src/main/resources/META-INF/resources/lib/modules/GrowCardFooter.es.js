@@ -21,7 +21,7 @@ class GrowCardFooter extends React.Component {
           </div>
 
           <div className="autofit-col">
-            <div className="autofit-section">
+            <div className="autofit-section text-secondary">
               <GrowIcon
                 spritemap={this.props.spritemap}
                 classes="lexicon-icon inline-item inline-item-before"
