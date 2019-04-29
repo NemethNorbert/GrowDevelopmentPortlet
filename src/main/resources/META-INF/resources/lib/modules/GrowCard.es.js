@@ -1,5 +1,6 @@
 import React from "react";
 import GrowIcon from "./GrowIcon.es";
+import GrowCardFooter from "./GrowCardFooter.es.js";
 
 class GrowCard extends React.Component {
   constructor(props) {
@@ -155,6 +156,7 @@ class GrowCard extends React.Component {
                     />
                   </svg>
                   <span>{this.props.articleCategory}</span>
+                  <GrowCardFooter />
                 </div>
               </div>
             </div>
