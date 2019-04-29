@@ -1,54 +1,127 @@
-import React from 'react';
+import React from "react";
+import GrowIcon from "./GrowIcon.es";
+import GrowCardFooter from "./GrowCardFooter.es.js";
 
-const GrowCard = (props) => {
-    return(
-        <div className="col-lg-4">
-            <div className="card-type-asset form-check form-check-card form-check-top-left image-card">
-                <div className="card">
-                    <div className="aspect-ratio card-item-first">
-                        <div className="custom-control custom-checkbox">
-                            <label>
-                                <input className="custom-control-input" type="checkbox"/>
-                                <span className="custom-control-label"></span>
-                                <img alt="thumbnail"className="aspect-ratio-item-center-middle aspect-ratio-item-fluid" src="https://via.placeholder.com/300x200" />
-                                <span className="sticker sticker-bottom-left sticker-danger rounded-circle">JPG</span>
-                            </label>
-                        </div>
-                    </div>
-                    <div className="card-body">
-                        <div className="card-row">
-                            <div className="autofit-col autofit-col-expand">
-                                <div className="card-title text-truncate" title="thumbnail_coffee.jpg">thumbnail_coffee.jpg</div>
-                                <div className="card-subtitle text-truncate" title="Author Action">Author Action</div>
-                                <div className="card-detail">
-                                    <span className="label label-success">
-                                        <span className="label-item label-item-expand">Approved</span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="autofit-col">
-                                <div className="dropdown dropdown-action">
-                                    <a aria-expanded="false" aria-haspopup="true" className="component-action dropdown-toggle" data-toggle="dropdown" href="#1" role="button">
-                                        <svg className="lexicon-icon lexicon-icon-ellipsis-v" focusable="false" role="presentation">
-                                            <use xlinkHref={props.spritemap+"/clay/icons.svg#ellipsis-v"} />
-                                        </svg>
-                                    </a>
-                                    <div className="dropdown-menu dropdown-menu-right">
-                                        <a className="dropdown-item" href="#1">Download</a>
-                                        <a className="dropdown-item" href="#1">Edit</a>
-                                        <a className="dropdown-item" href="#1">Move</a>
-                                        <a className="dropdown-item" href="#1">Checkout</a>
-                                        <a className="dropdown-item" href="#1">Permissions</a>
-                                        <a className="dropdown-item" href="#1">Move to Recycle Bin</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+class GrowCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      star: false,
+      like: false
+    };
+    // This binding is necessary to make `this` work in the callback
+    this.toggleStarContent = this.toggleStarContent.bind(this);
+    this.toggleLikeContent = this.toggleLikeContent.bind(this);
+  }
+
+  toggleStarContent() {
+    this.setState(state => ({
+      star: !state.star
+    }));
+  }
+  toggleLikeContent() {
+    this.setState(state => ({
+      like: !state.like
+    }));
+  }
+
+  render() {
+    return (
+      <div className="col-lg-6">
+        <div className="card">
+          <div className="card-body">
+            <div className="autofit-row autofit-padded mb-2">
+              <div className="autofit-col">
+                <div className="autofit-section">
+                  <img
+                    alt="Author's thumbnail"
+                    className="img-fluid sticker sticker-primary sticker-xl rounded-circle"
+                    src={this.props.articleAuthorAvatar}
+                  />
                 </div>
+              </div>
+              <div className="autofit-col autofit-col-expand">
+                <div className="autofit-section text-secondary">
+                  <strong>{this.props.articleAuthor}</strong>
+                  <br />
+                  <span>{this.props.articleCreateDate}</span>
+                </div>
+              </div>
+              <div className="autofit-col">
+                <div className="autofit-section">
+                  <button
+                    className="btn btn-outline-secondary btn-outline-borderless"
+                    type="button"
+                    onClick={this.toggleStarContent}
+                  >
+                    {this.state.star && (
+                      <GrowIcon
+                      spritemap={this.props.spritemap}
+                      classes="lexicon-icon inline-item"                        
+                      iconName="star"
+                      />
+                    )}
+                    {this.state.star == false && (
+                      <GrowIcon
+                      spritemap={this.props.spritemap}
+                      classes="lexicon-icon inline-item"                        
+                      iconName="star-o"
+                      />
+                    )}
+                  </button>
+
+                  <button
+                    className="btn btn-outline-secondary btn-outline-borderless"
+                    type="button"
+                    onClick={this.toggleLikeContent}
+                  >
+                    {this.state.like && (
+                      <GrowIcon
+                      spritemap={this.props.spritemap}
+                      classes="lexicon-icon thumbs-up-liked"                        
+                      iconName="thumbs-up"
+                      />
+                    )}
+                    {this.state.like == false && (
+                      <GrowIcon
+                      spritemap={this.props.spritemap}
+                      classes="lexicon-icon"                        
+                      iconName="thumbs-up"
+                      />
+                    )}
+                  </button>
+                </div>
+              </div>
             </div>
+
+            <div className="autofit-row autofit-padded">
+              <div className="autofit-col autofit-col-expand">
+                <div className="autofit-section">
+                  <h2>{this.props.articleTitle}</h2>
+                </div>
+              </div>
+            </div>
+
+            <div className="autofit-row autofit-padded">
+              <div className="autofit-col autofit-col-expand">
+                <div className="autofit-section">
+                  <div className="text-secondary">
+                    {this.props.articleContent}
+                  </div>
+                </div>
+              </div>
+            </div>
+                  <GrowCardFooter 
+                  articleTags={this.props.articleTags}
+                  spritemap={this.props.spritemap}
+                  articleReadCount={this.props.articleReadCount}
+                  articleCategory={this.props.articleCategory}
+                  />
+          </div>
         </div>
+      </div>
     );
+  }
 }
 
 export default GrowCard;

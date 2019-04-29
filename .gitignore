@@ -2,3 +2,5 @@
 build/
 node_modules/
 target/
+package-lock.json
+buildDeployRefresh.sh
