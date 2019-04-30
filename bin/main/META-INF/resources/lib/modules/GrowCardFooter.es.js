@@ -2,6 +2,7 @@ import React from "react";
 import GrowIcon from "./GrowIcon.es";
 import GrowCardSimpleTagList from "./GrowCardSimpleTagList.es";
 import GrowCardExtendedTagList from "./GrowCardExtendedTagList.es";
+import GrowCardCategoryFooter from "./GrowCardCategoryFooter.es";
 
 class GrowCardFooter extends React.Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class GrowCardFooter extends React.Component {
   }
   render() {
     return (
-      <div className="GrowCardFooter">
+      <div className="grow-card-footer">
         <div className="autofit-row autofit-padded mb-2">
           <div className="autofit-col autofit-col-expand">
             {this.props.articleTags.length > 3 && (
@@ -32,18 +33,34 @@ class GrowCardFooter extends React.Component {
           </div>
         </div>
 
-        <div className="autofit-row autofit-padded text-center">
-          <div className="autofit-col autofit-col-expand">
-            <div className="autofit-section">
-              <GrowIcon
-                spritemap={this.props.spritemap}
-                classes="lexicon-icon inline-item inline-item-before"
-                iconName="share"
-              />
-              <span>{this.props.articleCategory}</span>
-            </div>
-          </div>
-        </div>
+        {this.props.articleCategory == "Excellence" && (
+          <GrowCardCategoryFooter
+            articleCategory={this.props.articleCategory}
+            spritemap={this.props.spritemap}
+            iconName="sheets"
+          />
+        )}
+        {this.props.articleCategory == "Learn" && (
+          <GrowCardCategoryFooter
+            articleCategory={this.props.articleCategory}
+            spritemap={this.props.spritemap}
+            iconName="info-book"
+          />
+        )}
+        {this.props.articleCategory == "People" && (
+          <GrowCardCategoryFooter
+            articleCategory={this.props.articleCategory}
+            spritemap={this.props.spritemap}
+            iconName="user"
+          />
+        )}
+        {this.props.articleCategory == "Share" && (
+          <GrowCardCategoryFooter
+            articleCategory={this.props.articleCategory}
+            spritemap={this.props.spritemap}
+            iconName="share"
+          />
+        )}
       </div>
     );
   }
