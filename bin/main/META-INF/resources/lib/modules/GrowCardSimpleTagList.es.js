@@ -9,7 +9,7 @@ class GrowCardSimpleTagList extends React.Component {
       <div className="autofit-section">
         {this.props.articleTags.map((tag, index) => {
           return (
-            <span key={index} className="label label-lg">
+            <span key={index} className="label label-lg text-uppercase">
               <span className="label-info label-item label-item-expand">
                 {tag}
               </span>

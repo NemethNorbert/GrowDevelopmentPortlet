@@ -12,7 +12,7 @@ class GrowCardExtendedTagList extends React.Component {
       <div className="autofit-section">
         {this.props.articleTags.slice(0, tagsToDisplay).map((tag, index) => {
           return (
-            <span key={index} className="label label-lg">
+            <span key={index} className="label label-lg text-uppercase">
               <span className="label-info label-item label-item-expand">
                 {tag}
               </span>
@@ -23,7 +23,7 @@ class GrowCardExtendedTagList extends React.Component {
           remainingTags.push(" " + item);
         })}
         <span
-          className="label label-lg"
+          className="label label-lg text-uppercase"
           data-toggle="tooltip"
           data-placement="right"
           title={remainingTags}
