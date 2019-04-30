@@ -23,7 +23,7 @@ class GrowCardExtendedTagList extends React.Component {
           remainingTags.push(" " + item);
         })}
         <span
-          className="label label-lg text-uppercase"
+          className="label label-lg text-uppercase label-remaining-tags"
           data-toggle="tooltip"
           data-placement="right"
           title={remainingTags}
