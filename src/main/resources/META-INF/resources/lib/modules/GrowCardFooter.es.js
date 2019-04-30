@@ -10,7 +10,7 @@ class GrowCardFooter extends React.Component {
   render() {
     return (
       <div className="GrowCardFooter">
-        <div className="autofit-row autofit-padded">
+        <div className="autofit-row autofit-padded mb-2">
           <div className="autofit-col autofit-col-expand">
             {this.props.articleTags.length > 3 && (
               <GrowCardExtendedTagList articleTags={this.props.articleTags} />
