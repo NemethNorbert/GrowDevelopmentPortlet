@@ -38,22 +38,13 @@ class GrowToolbar extends React.Component {
 									</ul>
 								</div>
 							</li>
-							<li className="nav-item">
-								<a className="btn -link nav-link-monospaced order-arrow-down-active btn-unstyled" href="#1" role="button">
-									<GrowIcon
-										spritemap={this.props.spritemap}
-										classes="lexicon-icon lexicon-icon-order-arrow"                        
-										iconName="order-arrow"
-									/>
-								</a>
-							</li>
 						</ul>
 						<div className="navbar-form navbar-form-autofit navbar-overlay navbar-overlay-sm-down">
 							<div className="container">
 								<form role="search">
 									<div className="input-group">
 										<div className="input-group-item">
-											<input className="form-control input-group-inset input-group-inset-after" placeholder="Search for..." type="text"/>
+											<input className="form-control input-group-inset input-group-inset-after" placeholder="Search..." type="text"/>
 											<span className="input-group-inset-item input-group-inset-item-after">
 												<button className="btn btn-unstyled navbar-breakpoint-d-none" type="button">
 													<GrowIcon
@@ -85,51 +76,26 @@ class GrowToolbar extends React.Component {
 									/>
 								</a>
 							</li>
-							<li className="dropdown nav-item">
-								<a aria-expanded="false" aria-haspopup="true" className="dropdown-toggle nav-link nav-link-monospaced" data-toggle="dropdown" href="#1" role="button">
-									<GrowIcon
-										spritemap={this.props.spritemap}
-										classes="lexicon-icon lexicon-icon-list"                        
-										iconName="list"
-									/>
-								</a>
-								<div className="dropdown-menu dropdown-menu-right dropdown-menu-indicator-start" role="menu">
-									<ul className="list-unstyled">
-										<li><a className="active dropdown-item" href="#1">
-											<span className="dropdown-item-indicator">
-												<GrowIcon
-													spritemap={this.props.spritemap}
-													classes="lexicon-icon lexicon-icon-list"                        
-													iconName="list"
-												/>
-											</span>
-											List View
-										</a></li>
-										<li><a className="dropdown-item" href="#1">
-											<span className="dropdown-item-indicator">
-												<GrowIcon
-													spritemap={this.props.spritemap}
-													classes="lexicon-icon lexicon-icon-cards2"                        
-													iconName="cards2"
-												/>
-											</span>
-											Card View
-										</a></li>
-									</ul>
-								</div>
-							</li>
-							<li className="nav-item">
-								<button className="btn btn-primary nav-btn nav-btn-monospaced navbar-breakpoint-down-d-none" type="button">
-									<GrowIcon
-										spritemap={this.props.spritemap}
-										classes="lexicon-icon lexicon-plus"                        
-										iconName="plus"
-									/>
-								</button>
-							</li>
 						</ul>
 					</div>
 				</nav>
+				
+				<div className="autofit-row autofit-padded text-center">
+					<div className="autofit-col autofit-col-expand">
+						<div className="autofit-section">
+								<a href="" target="_self" className=" lfr-icon-item taglib-icon" id="" role="menuitem">  
+									<GrowIcon
+										spritemap={this.props.spritemap}
+										classes="lexicon-icon lexicon-plus inline-item inline-item-before"                        
+										iconName="plus"
+									/>
+								<span className="taglib-text">Create Account</span> 
+							</a>
+						</div>
+					</div>
+				</div>
+				
+				
 			</div>
 		);
 	}
