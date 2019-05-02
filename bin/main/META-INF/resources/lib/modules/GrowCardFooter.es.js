@@ -1,5 +1,8 @@
 import React from "react";
 import GrowIcon from "./GrowIcon.es";
+import GrowCardSimpleTagList from "./GrowCardSimpleTagList.es";
+import GrowCardExtendedTagList from "./GrowCardExtendedTagList.es";
+import GrowCardCategoryFooter from "./GrowCardCategoryFooter.es";
 
 class GrowCardFooter extends React.Component {
   constructor(props) {
@@ -7,24 +10,19 @@ class GrowCardFooter extends React.Component {
   }
   render() {
     return (
-      <div className="GrowCardFooter">
-        <div className="autofit-row autofit-padded">
+      <div className="grow-card-footer">
+        <div className="autofit-row autofit-padded mb-2">
           <div className="autofit-col autofit-col-expand">
-            <div className="autofit-section">
-              {this.props.articleTags.map((tag, index) => {
-                return (
-                  <span key={index} className="label label-lg">
-                    <span className="label-info label-item label-item-expand">
-                      {tag}
-                    </span>
-                  </span>
-                );
-              })}
-            </div>
+            {this.props.articleTags.length > 3 && (
+              <GrowCardExtendedTagList articleTags={this.props.articleTags} />
+            )}
+            {this.props.articleTags.length <= 3 && (
+              <GrowCardSimpleTagList articleTags={this.props.articleTags} />
+            )}
           </div>
 
           <div className="autofit-col">
-            <div className="autofit-section">
+            <div className="autofit-section text-secondary">
               <GrowIcon
                 spritemap={this.props.spritemap}
                 classes="lexicon-icon inline-item inline-item-before"
@@ -35,18 +33,34 @@ class GrowCardFooter extends React.Component {
           </div>
         </div>
 
-        <div className="autofit-row autofit-padded text-center">
-          <div className="autofit-col autofit-col-expand">
-            <div className="autofit-section">
-              <GrowIcon
-                spritemap={this.props.spritemap}
-                classes="lexicon-icon inline-item inline-item-before"
-                iconName="share"
-              />
-              <span>{this.props.articleCategory}</span>
-            </div>
-          </div>
-        </div>
+        {this.props.articleCategory == "Excellence" && (
+          <GrowCardCategoryFooter
+            articleCategory={this.props.articleCategory}
+            spritemap={this.props.spritemap}
+            iconName="sheets"
+          />
+        )}
+        {this.props.articleCategory == "Learn" && (
+          <GrowCardCategoryFooter
+            articleCategory={this.props.articleCategory}
+            spritemap={this.props.spritemap}
+            iconName="info-book"
+          />
+        )}
+        {this.props.articleCategory == "People" && (
+          <GrowCardCategoryFooter
+            articleCategory={this.props.articleCategory}
+            spritemap={this.props.spritemap}
+            iconName="user"
+          />
+        )}
+        {this.props.articleCategory == "Share" && (
+          <GrowCardCategoryFooter
+            articleCategory={this.props.articleCategory}
+            spritemap={this.props.spritemap}
+            iconName="share"
+          />
+        )}
       </div>
     );
   }
