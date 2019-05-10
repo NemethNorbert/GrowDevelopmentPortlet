@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import GrowCard from "./modules/GrowCard.es";
 import GrowToolbar from './modules/GrowToolbar.es'; 
 // import GrowList from './modules/GrowList.es';
-// import GrowFavouritesCard from './modules/GrowFavouritesCard.es';
+import GrowFavouritesCard from './modules/GrowFavouritesCard.es';
 
 
 const spritemap = Liferay.ThemeDisplay.getPathThemeImages();
@@ -41,14 +41,17 @@ class App extends React.Component {
 					articleReadCount={GrowCardData.readCount}
 					articleCategory={GrowCardData.articleCategory}
 				/>
-				{/* <GrowFavouritesCard spritemap={spritemap}/>
-				<GrowList spritemap={spritemap}/>
-				<GrowToolbar spritemap={spritemap}/> */}
-				
-		<GrowToolbar 
-			spritemap={spritemap}
-		/>
-		
+
+				<GrowFavouritesCard
+					spritemap={spritemap}
+				/>
+
+				{/* <GrowList spritemap={spritemap}/> */}
+
+				<GrowToolbar 
+					spritemap={spritemap}
+				/>
+
 			</div>
 		);
 	}
