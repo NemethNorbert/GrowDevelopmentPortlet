@@ -30,7 +30,7 @@ class GrowCardFooter extends React.Component {
             this.props.articleCategory.toLowerCase() + "-footer-inactive"
           }
         >
-          <div className="autofit-row autofit-padded text-center">
+          <div className="autofit-row text-center">
             <div className="autofit-col autofit-col-expand">
               <div
                 className={
