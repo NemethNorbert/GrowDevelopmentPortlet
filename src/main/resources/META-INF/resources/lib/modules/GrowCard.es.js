@@ -27,99 +27,97 @@ class GrowCard extends React.Component {
 
   render() {
     return (
-      <div className="col-lg-6">
-        <div
-          className={"grow-card card card-" + this.props.articleCategory.toLowerCase()}
-        >
-          <div className="card-body">
-            <div className="autofit-row autofit-padded mb-2">
-              <div className="autofit-col">
-                <div className="autofit-section">
-                  <img
-                    alt="Author's thumbnail"
-                    className="img-fluid sticker sticker-primary sticker-xl rounded-circle"
-                    src={this.props.articleAuthorAvatar}
-                  />
-                </div>
-              </div>
-              <div className="autofit-col autofit-col-expand">
-                <div className="autofit-section text-secondary">
-                  <strong>{this.props.articleAuthor}</strong>
-                  <br />
-                  <span>{this.props.articleCreateDate}</span>
-                </div>
-              </div>
-              <div className="autofit-col">
-                <div className="autofit-section">
-                  <button
-                    className="btn btn-outline-secondary btn-outline-borderless"
-                    type="button"
-                    onClick={this.toggleStarContent}
-                  >
-                    {this.state.star && (
-                      <GrowIcon
-                        spritemap={this.props.spritemap}
-                        classes="lexicon-icon inline-item"
-                        iconName="star"
-                      />
-                    )}
-                    {this.state.star == false && (
-                      <GrowIcon
-                        spritemap={this.props.spritemap}
-                        classes="lexicon-icon inline-item"
-                        iconName="star-o"
-                      />
-                    )}
-                  </button>
-
-                  <button
-                    className="btn btn-outline-secondary btn-outline-borderless"
-                    type="button"
-                    onClick={this.toggleLikeContent}
-                  >
-                    {this.state.like && (
-                      <GrowIcon
-                        spritemap={this.props.spritemap}
-                        classes="lexicon-icon thumbs-up-liked"
-                        iconName="thumbs-up"
-                      />
-                    )}
-                    {this.state.like == false && (
-                      <GrowIcon
-                        spritemap={this.props.spritemap}
-                        classes="lexicon-icon"
-                        iconName="thumbs-up"
-                      />
-                    )}
-                  </button>
-                </div>
+      <div
+        className={"grow-card card card-" + this.props.articleCategory.toLowerCase()}
+      >
+        <div className="card-body">
+          <div className="autofit-row autofit-padded mb-2">
+            <div className="autofit-col">
+              <div className="autofit-section">
+                <img
+                  alt="Author's thumbnail"
+                  className="img-fluid sticker sticker-primary sticker-xl rounded-circle"
+                  src={this.props.articleAuthorAvatar}
+                />
               </div>
             </div>
-
-            <div className="autofit-row autofit-padded">
-              <div className="autofit-col autofit-col-expand">
-                <div className="autofit-section">
-                  <h2>{this.props.articleTitle}</h2>
-                </div>
+            <div className="autofit-col autofit-col-expand">
+              <div className="autofit-section text-secondary">
+                <strong>{this.props.articleAuthor}</strong>
+                <br />
+                <span>{this.props.articleCreateDate}</span>
               </div>
             </div>
+            <div className="autofit-col">
+              <div className="autofit-section">
+                <button
+                  className="btn btn-outline-secondary btn-outline-borderless"
+                  type="button"
+                  onClick={this.toggleStarContent}
+                >
+                  {this.state.star && (
+                    <GrowIcon
+                      spritemap={this.props.spritemap}
+                      classes="lexicon-icon inline-item"
+                      iconName="star"
+                    />
+                  )}
+                  {this.state.star == false && (
+                    <GrowIcon
+                      spritemap={this.props.spritemap}
+                      classes="lexicon-icon inline-item"
+                      iconName="star-o"
+                    />
+                  )}
+                </button>
 
-            <div className="autofit-row autofit-padded">
-              <div className="autofit-col autofit-col-expand">
-                <div className="autofit-section">
-                  <div className="text-secondary">
-                    {this.props.articleContent}
-                  </div>
-                </div>
+                <button
+                  className="btn btn-outline-secondary btn-outline-borderless"
+                  type="button"
+                  onClick={this.toggleLikeContent}
+                >
+                  {this.state.like && (
+                    <GrowIcon
+                      spritemap={this.props.spritemap}
+                      classes="lexicon-icon thumbs-up-liked"
+                      iconName="thumbs-up"
+                    />
+                  )}
+                  {this.state.like == false && (
+                    <GrowIcon
+                      spritemap={this.props.spritemap}
+                      classes="lexicon-icon"
+                      iconName="thumbs-up"
+                    />
+                  )}
+                </button>
               </div>
             </div>
-            <GrowCardFooter
-              articleTags={this.props.articleTags}
-              spritemap={this.props.spritemap}
-              articleReadCount={this.props.articleReadCount}
-              articleCategory={this.props.articleCategory}
-            />
           </div>
+
+          <div className="autofit-row autofit-padded">
+            <div className="autofit-col autofit-col-expand">
+              <div className="autofit-section">
+                <h2>{this.props.articleTitle}</h2>
+              </div>
+            </div>
+          </div>
+
+          <div className="autofit-row autofit-padded">
+            <div className="autofit-col autofit-col-expand">
+              <div className="autofit-section">
+                <div className="text-secondary">
+                  {this.props.articleContent}
+                </div>
+              </div>
+            </div>
+          </div>
+          <GrowCardFooter
+            articleTags={this.props.articleTags}
+            spritemap={this.props.spritemap}
+            articleReadCount={this.props.articleReadCount}
+            articleCategory={this.props.articleCategory}
+          />
         </div>
       </div>
     );
