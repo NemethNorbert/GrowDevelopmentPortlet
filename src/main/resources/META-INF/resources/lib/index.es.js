@@ -108,6 +108,11 @@ class App extends React.Component {
 				</div>
 				<GrowFavouritesCard
 					spritemap={spritemap}
+					articleAuthor={GrowCardData.articleAuthor}
+					articleAuthorAvatar={GrowCardData.authorAvatar}
+					articleCreateDate={GrowCardData.createDate}
+					articleTitle={GrowCardData.articleTitle}
+					articleCategory={GrowCardData.articleCategory}
 				/>
 
 				{/* <GrowList spritemap={spritemap}/> */}
