@@ -1,6 +1,5 @@
 import React from "react";
 import GrowIcon from "./GrowIcon.es";
-import GrowCardCategoryFooter from "./GrowCardCategoryFooter.es";
 import GrowTagList from "./GrowTagList.es";
 
 class GrowCardFooter extends React.Component {
@@ -26,35 +25,52 @@ class GrowCardFooter extends React.Component {
             </div>
           </div>
         </div>
-
-        {this.props.articleCategory == "Excellence" && (
-          <GrowCardCategoryFooter
-            articleCategory={this.props.articleCategory}
-            spritemap={this.props.spritemap}
-            iconName="sheets"
-          />
-        )}
-        {this.props.articleCategory == "Learn" && (
-          <GrowCardCategoryFooter
-            articleCategory={this.props.articleCategory}
-            spritemap={this.props.spritemap}
-            iconName="info-book"
-          />
-        )}
-        {this.props.articleCategory == "People" && (
-          <GrowCardCategoryFooter
-            articleCategory={this.props.articleCategory}
-            spritemap={this.props.spritemap}
-            iconName="user"
-          />
-        )}
-        {this.props.articleCategory == "Share" && (
-          <GrowCardCategoryFooter
-            articleCategory={this.props.articleCategory}
-            spritemap={this.props.spritemap}
-            iconName="share"
-          />
-        )}
+        <div
+          className={
+            this.props.articleCategory.toLowerCase() + "-footer-inactive"
+          }
+        >
+          <div className="autofit-row autofit-padded text-center">
+            <div className="autofit-col autofit-col-expand">
+              <div
+                className={
+                  this.props.articleCategory.toLowerCase() +
+                  "-footer-active autofit-section"
+                }
+              >
+                {(() => {
+                  switch(this.props.articleCategory) {
+                    case 'Excellence':
+                      return <GrowIcon
+                        spritemap={this.props.spritemap}
+                        classes="lexicon-icon inline-item inline-item-before"
+                        iconName="sheets"
+                      />;
+                    case 'Learn':
+                      return <GrowIcon
+                        spritemap={this.props.spritemap}
+                        classes="lexicon-icon inline-item inline-item-before"
+                        iconName="info-book"
+                      />;
+                    case 'People':
+                      return <GrowIcon
+                        spritemap={this.props.spritemap}
+                        classes="lexicon-icon inline-item inline-item-before"
+                        iconName="user"
+                      />;
+                    default:
+                      return <GrowIcon
+                        spritemap={this.props.spritemap}
+                        classes="lexicon-icon inline-item inline-item-before"
+                        iconName="share"
+                      />;
+                  }
+                })()}
+                <span>{this.props.articleCategory}</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
