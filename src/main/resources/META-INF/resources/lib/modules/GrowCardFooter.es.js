@@ -1,8 +1,7 @@
 import React from "react";
 import GrowIcon from "./GrowIcon.es";
-import GrowCardSimpleTagList from "./GrowCardSimpleTagList.es";
-import GrowCardExtendedTagList from "./GrowCardExtendedTagList.es";
 import GrowCardCategoryFooter from "./GrowCardCategoryFooter.es";
+import GrowTagList from "./GrowTagList.es";
 
 class GrowCardFooter extends React.Component {
   constructor(props) {
@@ -13,12 +12,7 @@ class GrowCardFooter extends React.Component {
       <div className="grow-card-footer">
         <div className="autofit-row autofit-padded mb-2">
           <div className="autofit-col autofit-col-expand">
-            {this.props.articleTags.length > 3 && (
-              <GrowCardExtendedTagList articleTags={this.props.articleTags} />
-            )}
-            {this.props.articleTags.length <= 3 && (
-              <GrowCardSimpleTagList articleTags={this.props.articleTags} />
-            )}
+              <GrowTagList articleTags={this.props.articleTags} />
           </div>
 
           <div className="autofit-col">
