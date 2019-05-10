@@ -30,18 +30,60 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				<GrowCard
-					spritemap={spritemap}
-					articleAuthor={GrowCardData.articleAuthor}
-					articleAuthorAvatar={GrowCardData.authorAvatar}
-					articleCreateDate={GrowCardData.createDate}
-					articleTitle={GrowCardData.articleTitle}
-					articleContent={GrowCardData.articleContent}
-					articleTags={GrowCardData.tags}
-					articleReadCount={GrowCardData.readCount}
-					articleCategory={GrowCardData.articleCategory}
-				/>
-
+				<div className="row">
+					<div className="col-lg-4">
+						<GrowCard
+							spritemap={spritemap}
+							articleAuthor={GrowCardData.articleAuthor}
+							articleAuthorAvatar={GrowCardData.authorAvatar}
+							articleCreateDate={GrowCardData.createDate}
+							articleTitle={GrowCardData.articleTitle}
+							articleContent={GrowCardData.articleContent}
+							articleTags={GrowCardData.tags}
+							articleReadCount={GrowCardData.readCount}
+							articleCategory={GrowCardData.articleCategory}
+						/>
+					</div>
+					<div className="col-lg-4">
+						<GrowCard
+							spritemap={spritemap}
+							articleAuthor={GrowCardData.articleAuthor}
+							articleAuthorAvatar={GrowCardData.authorAvatar}
+							articleCreateDate={GrowCardData.createDate}
+							articleTitle={GrowCardData.articleTitle}
+							articleContent={GrowCardData.articleContent}
+							articleTags={GrowCardData.tags}
+							articleReadCount={GrowCardData.readCount}
+							articleCategory={GrowCardData.articleCategory}
+						/>
+					</div>
+					<div className="col-lg-4">
+						<GrowCard
+							spritemap={spritemap}
+							articleAuthor={GrowCardData.articleAuthor}
+							articleAuthorAvatar={GrowCardData.authorAvatar}
+							articleCreateDate={GrowCardData.createDate}
+							articleTitle={GrowCardData.articleTitle}
+							articleContent={GrowCardData.articleContent}
+							articleTags={GrowCardData.tags}
+							articleReadCount={GrowCardData.readCount}
+							articleCategory={GrowCardData.articleCategory}
+						/>
+					</div>
+				</div>
+				<div className="col-lg-8">
+					<GrowCard
+						spritemap={spritemap}
+						articleAuthor={GrowCardData.articleAuthor}
+						articleAuthorAvatar={GrowCardData.authorAvatar}
+						articleCreateDate={GrowCardData.createDate}
+						articleTitle={GrowCardData.articleTitle}
+						articleContent={GrowCardData.articleContent}
+						articleTags={GrowCardData.tags}
+						articleReadCount={GrowCardData.readCount}
+						articleCategory={GrowCardData.articleCategory}
+					/>
+				</div>
 				<GrowFavouritesCard
 					spritemap={spritemap}
 				/>
