@@ -46,3 +46,31 @@
 
 .share-footer-inactive {
   color: #66b2ff; }
+
+.blue-color {
+  color: #2E5AAC !important; }
+
+.white-background-color {
+  background-color: #FFFFFF !important; }
+
+.filter-control {
+  background-clip: border-box;
+  border-color: #e7e7ed;
+  border-style: solid;
+  border-bottom-width: 0.0625rem;
+  border-left-width: 0.0625rem;
+  border-right-width: 0;
+  border-top-width: 0.0625rem;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+  height: 2.5rem;
+  min-width: 0;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem; }
+
+.search-control {
+  border-left-width: 0 !important;
+  border-right-width: 0 !important;
+  border-top-left-radius: 0 !important; }
