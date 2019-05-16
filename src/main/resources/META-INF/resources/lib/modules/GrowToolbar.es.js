@@ -30,10 +30,10 @@ class GrowToolbar extends React.Component {
 											<ul className="navbar-nav filter-control">
 												<li className="dropdown nav-item">
 													<a aria-expanded="false" aria-haspopup="true" className="dropdown-toggle navbar-breakpoint-down-d-none blue-color" data-toggle="dropdown" href="#1" role="button">
-														<span className="navbar-text-truncate padding-right">Filters</span>
+														<span className="navbar-text-truncate navbar-filter padding-right">Filters</span>
 														<GrowIcon
 															spritemap={this.props.spritemap}
-															classes="lexicon-icon lexicon-icon-angle-down"                        
+															classes="lexicon-icon lexicon-icon-angle-down inline-item-after"                        
 															iconName="angle-down"
 														/>
 													</a>
@@ -45,11 +45,94 @@ class GrowToolbar extends React.Component {
 														/>
 													</a>
 													<div className="dropdown-menu" role="menu">
-														<ul className="list-unstyled">
-															<li><a className="dropdown-item" href="#1" role="button">Filter Action 1</a></li>
-															<li><a className="dropdown-item" href="#1" role="button">Filter Action 2</a></li>
-															<li><a className="dropdown-item" href="#1" role="button">Filter Action 3</a></li>
-														</ul>
+														<div className="custom-control ">
+															<span className="custom-control-group-label-text">Content Type</span>
+														</div>
+														<div className="custom-control custom-radio">
+															<label>
+																<input checked className="custom-control-input" id="contenttype-all" name="contenttype" type="radio"/>
+																<span className="custom-control-label">
+																	<span className="custom-control-label-text">All</span>
+																</span>
+															</label>
+														</div>
+														<div className="custom-control custom-radio">
+															<label>
+																<input className="custom-control-input" id="contenttype-wikis" name="contenttype" type="radio"/>
+																<span className="custom-control-label">
+																	<span className="custom-control-label-text">Wikis</span>
+																</span>
+															</label>
+														</div>
+														<div className="custom-control custom-radio">
+															<label>
+																<input className="custom-control-input" id="contenttype-files" name="contenttype" type="radio"/>
+																<span className="custom-control-label">
+																	<span className="custom-control-label-text">Files</span>
+																</span>
+															</label>
+														</div>
+														<div className="custom-control custom-radio">
+															<label>
+																<input className="custom-control-input" id="contenttype-discussions" name="contenttype" type="radio"/>
+																<span className="custom-control-label">
+																	<span className="custom-control-label-text">Discussions</span>
+																</span>
+															</label>
+														</div>
+														
+														<div className="custom-control ">
+															<span className="custom-control-group-label-text">Date</span>
+														</div>
+														<div className="custom-control custom-radio">
+															<label>
+																<input checked className="custom-control-input" id="date-discussions" name="date" type="radio"/>
+																<span className="custom-control-label">
+																	<span className="custom-control-label-text">Anytime</span>
+																</span>
+															</label>
+														</div>
+														<div className="custom-control custom-radio">
+															<label>
+																<input className="custom-control-input" id="date-lasthour" name="date" type="radio"/>
+																<span className="custom-control-label">
+																	<span className="custom-control-label-text">Last Hour</span>
+																</span>
+															</label>
+														</div>
+														<div className="custom-control custom-radio">
+															<label>
+																<input className="custom-control-input" id="date-last24hours" name="date" type="radio"/>
+																<span className="custom-control-label">
+																	<span className="custom-control-label-text">Last 24 Hours</span>
+																</span>
+															</label>
+														</div>
+														<div className="custom-control custom-radio">
+															<label>
+																<input className="custom-control-input" id="date-lastweek" name="date" type="radio"/>
+																<span className="custom-control-label">
+																	<span className="custom-control-label-text">Last Week</span>
+																</span>
+															</label>
+														</div>
+														<div className="custom-control custom-radio">
+															<label>
+																<input className="custom-control-input" id="date-lastmonth" name="date" type="radio"/>
+																<span className="custom-control-label">
+																	<span className="custom-control-label-text">Last Month</span>
+																</span>
+															</label>
+														</div>
+														<div className="custom-control custom-radio">
+															<label>
+																<input className="custom-control-input" id="date-lastyear" name="date" type="radio"/>
+																<span className="custom-control-label">
+																	<span className="custom-control-label-text">Last Year</span>
+																</span>
+															</label>
+														</div>
+
 													</div>
 												</li>
 											</ul>
@@ -107,7 +190,7 @@ class GrowToolbar extends React.Component {
 				<div className="autofit-row autofit-padded text-center">
 					<div className="autofit-col autofit-col-expand">
 						<div className="autofit-section">
-							<a href="" target="_self" className=" lfr-icon-item taglib-icon blue-color" id="" role="menuitem">  
+							<a href="" target="_self" className="lfr-icon-item link-icon blue-color" id="" role="menuitem">  
 								<GrowIcon
 									spritemap={this.props.spritemap}
 									classes="lexicon-icon lexicon-plus inline-item inline-item-before"                        
