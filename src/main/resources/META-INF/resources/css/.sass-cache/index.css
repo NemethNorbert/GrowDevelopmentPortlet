@@ -48,14 +48,23 @@
   color: #66b2ff; }
 
 .blue-color {
-  color: #2E5AAC !important; }
+  color: #0080FF !important; }
 
 .white-background-color {
   background-color: #FFFFFF !important; }
 
+.navbar-filter {
+  font-weight: 550; }
+
+a.link-icon, a.taglib-icon:hover, a.taglib-icon.btn:focus {
+  text-decoration: none !important; }
+
 .filter-control {
+  background-color: #f8f9fa;
   background-clip: border-box;
-  border-color: #e7e7ed;
+  border-top-color: #e7e7ed;
+  border-left-color: #e7e7ed;
+  border-bottom-color: #0080FF;
   border-style: solid;
   border-bottom-width: 0.0625rem;
   border-left-width: 0.0625rem;
@@ -73,4 +82,28 @@
 .search-control {
   border-left-width: 0 !important;
   border-right-width: 0 !important;
-  border-top-left-radius: 0 !important; }
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important; }
+
+.padding-right {
+  padding-right: 0.5rem; }
+
+.custom-control label {
+  margin-left: 0.45rem;
+  color: #6c757d;
+  font-weight: normal; }
+
+.custom-control-input:checked + .custom-control-label {
+  color: #6c757d;
+  font-weight: 600; }
+
+.management-bar .dropdown-menu {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-shadow: none;
+  left: -17px;
+  top: 30px; }
+
+.custom-control-group-label-text {
+  color: #6c757d;
+  font-weight: 700; }
