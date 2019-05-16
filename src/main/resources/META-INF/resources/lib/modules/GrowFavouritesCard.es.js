@@ -5,6 +5,14 @@ import GrowCardCategoryFooter from "./GrowCardCategoryFooter.es";
 class GrowFavouritesCard extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {star: true};
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(state => ({
+      star: !state.star
+    }));
   }
 
   render() {
@@ -25,25 +33,55 @@ class GrowFavouritesCard extends React.Component {
               <div className="autofit-col autofit-col-expand">
                 <div className="autofit-section text-secondary">
                   <strong>{this.props.articleAuthor}</strong>
-                  <br />
-                  <span>{this.props.articleCreateDate}</span>
+                  <div className="break">{this.props.articleCreateDate}</div>
                 </div>
               </div>
               <div className="autofit-section">
-                <button className="btn btn-outline-secondary btn-outline-borderless" type="button">{
+                <button className="btn btn-outline-secondary btn-outline-borderless" type="button" onClick={this.handleClick}>
+                    {this.state.star && (
                       <GrowIcon
                         spritemap={this.props.spritemap}
                         classes="lexicon-icon inline-item"
-                        iconName="star"
+                        iconName="star-o"
                       />
-                    }
+                    )}
+                    {this.state.star == false && (
+                      <GrowIcon
+                      spritemap={this.props.spritemap}
+                      classes="lexicon-icon inline-item"
+                      iconName="star"
+                      />
+                    )}
                 </button>
                 <button className="btn btn-outline-secondary btn-outline-borderless" type="button">
-                    <GrowIcon
+                    {this.props.articleCategory == "Excellence" && (
+                      <GrowIcon
                         spritemap={this.props.spritemap}
-                        classes="lexicon-icon inline-item"
+                        classes={"lexicon-icon inline-item icon-" + this.props.articleCategory.toLowerCase()}
+                        iconName="sheets"
+                      />
+                    )}
+                    {this.props.articleCategory == "Learn" && (
+                      <GrowIcon
+                        spritemap={this.props.spritemap}
+                        classes={"lexicon-icon inline-item icon-" + this.props.articleCategory.toLowerCase()}
+                        iconName="info-book"
+                      />
+                    )}
+                    {this.props.articleCategory == "People" && (
+                      <GrowIcon
+                        spritemap={this.props.spritemap}
+                        classes={"lexicon-icon inline-item icon-" + this.props.articleCategory.toLowerCase()}
                         iconName="user"
                       />
+                    )}
+                    {this.props.articleCategory == "Share" && (
+                      <GrowIcon
+                        spritemap={this.props.spritemap}
+                        classes={"lexicon-icon inline-item icon-" + this.props.articleCategory.toLowerCase()}
+                        iconName="share"
+                      />
+                    )}
                 </button>
               </div>
             </div>
@@ -62,32 +100,5 @@ class GrowFavouritesCard extends React.Component {
   }
 
 }
-
-
-
-// const GrowFavouritesCard = (props) => {
-//     return (
-//         <div className="col-lg-4">
-//             <div className="card card-horizontal card-type-directory">
-//                 <div className="card-body">
-//                     <div className="card-row">
-//                         <div className="flex-col">
-//                             <span className="sticker">
-//                                 <span className="inline-item">
-//                                     <svg className="lexicon-icon lexicon-icon-folder" focusable="false" role="presentation">
-//                                         <use xlinkHref={props.spritemap+"/clay/icons.svg#folder"} />
-//                                     </svg>
-//                                 </span>
-//                             </span>
-//                         </div>
-//                         <div className="autofit-col autofit-col-expand autofit-col-gutters">
-//                             <div className="card-title text-truncate">{this.props.articleAuthor}</div>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }
 
 export default GrowFavouritesCard;
