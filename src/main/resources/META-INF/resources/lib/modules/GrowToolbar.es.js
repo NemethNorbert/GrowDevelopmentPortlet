@@ -8,6 +8,10 @@ class GrowToolbar extends React.Component {
 
 	}
 	
+	doSearch() {
+		console.log("doSearch");
+	}
+	
 	render() {
 		return (
 			<div className="col-lg-8">
@@ -24,7 +28,12 @@ class GrowToolbar extends React.Component {
 					<div className="container">
 						<div className="navbar-form navbar-form-autofit navbar-overlay navbar-overlay-sm-down">
 							<div className="container">
-								<form role="search">
+								<form 
+									role="search" 
+									name={this.props.searchFormName} 
+									method={this.props.searchFormMethod} 
+									action={this.props.searchActionURL}
+								>
 									<div className="input-group">
 										<div className="input-group-item">
 											<ul className="navbar-nav filter-control">
@@ -145,7 +154,11 @@ class GrowToolbar extends React.Component {
 														iconName="times"
 													/>
 												</button>
-												<button className="btn btn-unstyled navbar-breakpoint-d-block btn-link blue-color" type="button">
+												<button 
+													className="btn btn-unstyled navbar-breakpoint-d-block btn-link blue-color" 
+													type="button"
+													onClick={this.doSearch}
+													>
 													<GrowIcon
 														spritemap={this.props.spritemap}
 														classes="lexicon-icon lexicon-icon-search"                        

@@ -24,7 +24,11 @@ const GrowCardData = {
 // const GrowFavouritesCardData = {};
 // const GrowListData = {};
 
-const GrowToolbarData = {};
+const GrowToolbarData = {
+	searchActionURL: "http://localhost:8080",
+	searchFormMethod: "POST",
+	searchFormName: "grow-search",
+};
 
 class App extends React.Component {
 	render() {
@@ -92,6 +96,9 @@ class App extends React.Component {
 
 				<GrowToolbar 
 					spritemap={spritemap}
+			searchActionURL={GrowToolbarData.searchActionURL}
+			searchFormMethod={GrowToolbarData.searchFormMethod}
+			searchFormName={GrowToolbarData.searchFormName}
 				/>
 
 			</div>
