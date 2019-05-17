@@ -7,13 +7,14 @@ class GrowDropDownItem extends React.Component {
 		super(props);
 		
 		this.state = {
-			checked: false,
+			checked: props.checked,
 		};
 		
-		this.handleClick = this.handleClick.bind(this);
+		this.handleChange = this.handleChange.bind(this);
     }
 	
-	handleClick(){
+	handleChange(){
+		console.log("handleChange");
 		this.setState({
 			checked: !this.state.checked,
 		})
@@ -30,6 +31,8 @@ class GrowDropDownItem extends React.Component {
 						id={this.props.id}
 						name={this.props.name} 
 						type={this.props.type}
+						checked={this.state.checked}
+						onChange={this.handleChange}
 					/>
 					<span className="custom-control-label">
 						<span className="custom-control-label-text">

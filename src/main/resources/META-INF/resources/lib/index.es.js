@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import GrowCard from "./modules/GrowCard.es";
 import GrowToolbar from './modules/GrowToolbar.es'; 
 // import GrowList from './modules/GrowList.es';
-// import GrowFavouritesCard from './modules/GrowFavouritesCard.es';
+import GrowFavouritesCard from './modules/GrowFavouritesCard.es';
 
 
 const spritemap = Liferay.ThemeDisplay.getPathThemeImages();
@@ -30,19 +30,19 @@ const GrowToolbarData = {
 	searchFormName: "grow-search",
 	searchFilter: [{label: "Content Type", 
 						items: [
-							{id: "contenttype-all", name: "contenttype", label: "All", type: "radio", checked: true},
-							{id: "contenttype-wikis", name: "contenttype", label: "Wikis", type: "radio"},
-							{id: "contenttype-files", name: "contenttype", label: "Files", type: "radio"},
-							{id: "contenttype-discussions", name: "contenttype", label: "Discussions", type: "radio"}
+							{id: "contenttype-all", name: "filter-contenttype", label: "All", type: "radio", checked: true},
+							{id: "contenttype-wikis", name: "filter-contenttype", label: "Wikis", type: "radio"},
+							{id: "contenttype-files", name: "filter-contenttype", label: "Files", type: "radio"},
+							{id: "contenttype-discussions", name: "filter-contenttype", label: "Discussions", type: "radio"}
 					]},
 					{label: "Date",
 						items: [
-							{id: "date-all", name: "contenttype", label: "Anytime", type: "radio", checked: true},
-							{id: "date-lasthour", name: "contenttype", label: "Last Hour", type: "radio"},
-							{id: "date-last24hours", name: "contenttype", label: "Last 24 Hours", type: "radio"},
-							{id: "date-lastweek", name: "contenttype", label: "Last Week", type: "radio"},
-							{id: "date-lastmonth", name: "contenttype", label: "Last Month", type: "radio"},
-							{id: "date-lastyear", name: "contenttype", label: "Last Year", type: "radio"}
+							{id: "date-all", name: "filter-date", label: "Anytime", type: "radio", checked: true},
+							{id: "date-lasthour", name: "filter-date", label: "Last Hour", type: "radio"},
+							{id: "date-last24hours", name: "filter-date", label: "Last 24 Hours", type: "radio"},
+							{id: "date-lastweek", name: "filter-date", label: "Last Week", type: "radio"},
+							{id: "date-lastmonth", name: "filter-date", label: "Last Month", type: "radio"},
+							{id: "date-lastyear", name: "filter-date", label: "Last Year", type: "radio"}
 					]}]
 };
 
@@ -114,10 +114,10 @@ class App extends React.Component {
 
 				<GrowToolbar 
 					spritemap={spritemap}
-			searchActionURL={GrowToolbarData.searchActionURL}
-			searchFormMethod={GrowToolbarData.searchFormMethod}
-			searchFormName={GrowToolbarData.searchFormName}
-			searchFilter={GrowToolbarData.searchFilter}
+					searchActionURL={GrowToolbarData.searchActionURL}
+					searchFormMethod={GrowToolbarData.searchFormMethod}
+					searchFormName={GrowToolbarData.searchFormName}
+					searchFilter={GrowToolbarData.searchFilter}
 				/>
 
 			</div>
