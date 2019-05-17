@@ -63,7 +63,7 @@ class App extends React.Component {
 							articleContent={GrowCardData.articleContent}
 							articleTags={GrowCardData.tags}
 							articleReadCount={GrowCardData.readCount}
-							articleCategory={GrowCardData.articleCategory}
+							articleCategory="Learn"
 						/>
 					</div>
 					<div className="col-lg-4">
@@ -89,7 +89,7 @@ class App extends React.Component {
 							articleContent={GrowCardData.articleContent}
 							articleTags={GrowCardData.tags}
 							articleReadCount={GrowCardData.readCount}
-							articleCategory={GrowCardData.articleCategory}
+							articleCategory="Excellence"
 						/>
 					</div>
 				</div>
@@ -103,7 +103,7 @@ class App extends React.Component {
 						articleContent={GrowCardData.articleContent}
 						articleTags={GrowCardData.tags}
 						articleReadCount={GrowCardData.readCount}
-						articleCategory={GrowCardData.articleCategory}
+						articleCategory="People"
 					/>
 				</div>
 				<GrowFavouritesCard
