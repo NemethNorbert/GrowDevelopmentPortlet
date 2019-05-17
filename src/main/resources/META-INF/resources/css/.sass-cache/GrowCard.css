@@ -11,26 +11,32 @@
 .label-remaining-tags {
   border-style: none; }
 
+.grow-card {
+  border-bottom: 0.6rem solid #fff; }
+
+.grow-card .card-body {
+  padding: 1rem 1rem 0.65rem 1rem; }
+
 .card-excellence:hover {
-  border-bottom: 6px solid #fa8072; }
+  border-color: #fa8072; }
 
 .card-excellence:hover * .excellence-footer-active {
   color: #fa8072; }
 
 .card-learn:hover {
-  border-bottom: 6px solid #400080; }
+  border-color: #400080; }
 
 .card-learn:hover * .learn-footer-active {
   color: #400080; }
 
 .card-people:hover {
-  border-bottom: 6px solid #0ff; }
+  border-color: #0ff; }
 
 .card-people:hover * .people-footer-active {
   color: #0ff; }
 
 .card-share:hover {
-  border-bottom: 6px solid #0080ff; }
+  border-color: #0080ff; }
 
 .card-share:hover * .share-footer-active {
   color: #0080ff; }
