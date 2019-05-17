@@ -201,4 +201,6 @@
 /util-taglib/util-taglib*.jar
 /working.dir.properties
 /WEB-INF
+/node_modules
 _sass_cache_*.css
+*.sass-cache*
