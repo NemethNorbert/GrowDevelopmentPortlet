@@ -1,5 +1,6 @@
 import React from 'react';
 import GrowIcon from "./GrowIcon.es";
+import GrowDropDown from "./GrowDropDown.es";
 
 class GrowToolbar extends React.Component {
 	
@@ -15,6 +16,7 @@ class GrowToolbar extends React.Component {
 	render() {
 		return (
 			<div className="col-lg-8">
+			
 				<div className="autofit-row autofit-padded text-center">
 					<div className="autofit-col autofit-col-expand">
 						<div className="autofit-section">
@@ -22,7 +24,6 @@ class GrowToolbar extends React.Component {
 						</div>
 					</div>
 				</div>
-			
 			
 				<nav className="management-bar management-bar-light navbar navbar-expand-md">
 					<div className="container">
@@ -53,96 +54,12 @@ class GrowToolbar extends React.Component {
 															iconName="filter"
 														/>
 													</a>
-													<div className="dropdown-menu" role="menu">
-														<div className="custom-control ">
-															<span className="custom-control-group-label-text">Content Type</span>
-														</div>
-														<div className="custom-control custom-radio">
-															<label>
-																<input checked className="custom-control-input" id="contenttype-all" name="contenttype" type="radio"/>
-																<span className="custom-control-label">
-																	<span className="custom-control-label-text">All</span>
-																</span>
-															</label>
-														</div>
-														<div className="custom-control custom-radio">
-															<label>
-																<input className="custom-control-input" id="contenttype-wikis" name="contenttype" type="radio"/>
-																<span className="custom-control-label">
-																	<span className="custom-control-label-text">Wikis</span>
-																</span>
-															</label>
-														</div>
-														<div className="custom-control custom-radio">
-															<label>
-																<input className="custom-control-input" id="contenttype-files" name="contenttype" type="radio"/>
-																<span className="custom-control-label">
-																	<span className="custom-control-label-text">Files</span>
-																</span>
-															</label>
-														</div>
-														<div className="custom-control custom-radio">
-															<label>
-																<input className="custom-control-input" id="contenttype-discussions" name="contenttype" type="radio"/>
-																<span className="custom-control-label">
-																	<span className="custom-control-label-text">Discussions</span>
-																</span>
-															</label>
-														</div>
-														
-														<div className="custom-control ">
-															<span className="custom-control-group-label-text">Date</span>
-														</div>
-														<div className="custom-control custom-radio">
-															<label>
-																<input checked className="custom-control-input" id="date-discussions" name="date" type="radio"/>
-																<span className="custom-control-label">
-																	<span className="custom-control-label-text">Anytime</span>
-																</span>
-															</label>
-														</div>
-														<div className="custom-control custom-radio">
-															<label>
-																<input className="custom-control-input" id="date-lasthour" name="date" type="radio"/>
-																<span className="custom-control-label">
-																	<span className="custom-control-label-text">Last Hour</span>
-																</span>
-															</label>
-														</div>
-														<div className="custom-control custom-radio">
-															<label>
-																<input className="custom-control-input" id="date-last24hours" name="date" type="radio"/>
-																<span className="custom-control-label">
-																	<span className="custom-control-label-text">Last 24 Hours</span>
-																</span>
-															</label>
-														</div>
-														<div className="custom-control custom-radio">
-															<label>
-																<input className="custom-control-input" id="date-lastweek" name="date" type="radio"/>
-																<span className="custom-control-label">
-																	<span className="custom-control-label-text">Last Week</span>
-																</span>
-															</label>
-														</div>
-														<div className="custom-control custom-radio">
-															<label>
-																<input className="custom-control-input" id="date-lastmonth" name="date" type="radio"/>
-																<span className="custom-control-label">
-																	<span className="custom-control-label-text">Last Month</span>
-																</span>
-															</label>
-														</div>
-														<div className="custom-control custom-radio">
-															<label>
-																<input className="custom-control-input" id="date-lastyear" name="date" type="radio"/>
-																<span className="custom-control-label">
-																	<span className="custom-control-label-text">Last Year</span>
-																</span>
-															</label>
-														</div>
+													
+													<GrowDropDown
+														spritemap={this.props.spritemap}
+														searchFilter={this.props.searchFilter}
+													/>
 
-													</div>
 												</li>
 											</ul>
 											<input className="form-control input-group-inset input-group-inset-after white-background-color search-control" placeholder="Search..." type="text"/>
@@ -158,7 +75,7 @@ class GrowToolbar extends React.Component {
 													className="btn btn-unstyled navbar-breakpoint-d-block btn-link blue-color" 
 													type="button"
 													onClick={this.doSearch}
-													>
+												>
 													<GrowIcon
 														spritemap={this.props.spritemap}
 														classes="lexicon-icon lexicon-icon-search"                        
@@ -192,14 +109,9 @@ class GrowToolbar extends React.Component {
 								</a>
 							</li>
 						</ul>
-						
-
-						
 					</div>
 				</nav>
-				
 
-				
 				<div className="autofit-row autofit-padded text-center">
 					<div className="autofit-col autofit-col-expand">
 						<div className="autofit-section">
@@ -214,7 +126,6 @@ class GrowToolbar extends React.Component {
 						</div>
 					</div>
 				</div>
-				
 				
 			</div>
 		);
