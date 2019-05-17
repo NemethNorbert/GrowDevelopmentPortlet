@@ -204,3 +204,4 @@
 /node_modules
 _sass_cache_*.css
 *.sass-cache*
+.sass-cache/
