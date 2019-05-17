@@ -1,6 +1,5 @@
 import React from 'react';
 import GrowIcon from "./GrowIcon.es";
-import GrowCardCategoryFooter from "./GrowCardCategoryFooter.es";
 
 class GrowFavouritesCard extends React.Component {
   constructor(props) {
@@ -54,34 +53,34 @@ class GrowFavouritesCard extends React.Component {
                     )}
                 </button>
                 <button className="btn btn-outline-secondary btn-outline-borderless" type="button">
-                    {this.props.articleCategory == "Excellence" && (
-                      <GrowIcon
-                        spritemap={this.props.spritemap}
-                        classes={"lexicon-icon inline-item icon-" + this.props.articleCategory.toLowerCase()}
-                        iconName="sheets"
-                      />
-                    )}
-                    {this.props.articleCategory == "Learn" && (
-                      <GrowIcon
-                        spritemap={this.props.spritemap}
-                        classes={"lexicon-icon inline-item icon-" + this.props.articleCategory.toLowerCase()}
-                        iconName="info-book"
-                      />
-                    )}
-                    {this.props.articleCategory == "People" && (
-                      <GrowIcon
-                        spritemap={this.props.spritemap}
-                        classes={"lexicon-icon inline-item icon-" + this.props.articleCategory.toLowerCase()}
-                        iconName="user"
-                      />
-                    )}
-                    {this.props.articleCategory == "Share" && (
-                      <GrowIcon
-                        spritemap={this.props.spritemap}
-                        classes={"lexicon-icon inline-item icon-" + this.props.articleCategory.toLowerCase()}
-                        iconName="share"
-                      />
-                    )}
+                     {(() => {
+                        switch(this.props.articleCategory) {
+                            case 'Excellence':
+                            return <GrowIcon
+                                spritemap={this.props.spritemap}
+                                classes="lexicon-icon inline-item inline-item-before"
+                                iconName="sheets"
+                            />;
+                            case 'Learn':
+                            return <GrowIcon
+                                spritemap={this.props.spritemap}
+                                classes="lexicon-icon inline-item inline-item-before"
+                                iconName="info-book"
+                            />;
+                            case 'People':
+                            return <GrowIcon
+                                spritemap={this.props.spritemap}
+                                classes="lexicon-icon inline-item inline-item-before"
+                                iconName="user"
+                            />;
+                            default:
+                            return <GrowIcon
+                                spritemap={this.props.spritemap}
+                                classes="lexicon-icon inline-item inline-item-before"
+                                iconName="share"
+                            />;
+                        }
+                    })()}
                 </button>
               </div>
             </div>
