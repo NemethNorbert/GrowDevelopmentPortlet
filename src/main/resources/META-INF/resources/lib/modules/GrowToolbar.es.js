@@ -1,12 +1,14 @@
 import React from 'react';
 import GrowIcon from "./GrowIcon.es";
 import GrowDropDown from "./GrowDropDown.es";
+import GrowTitle from "./GrowTitle.es";
 
 class GrowToolbar extends React.Component {
 	
 	constructor(props) {
 		super(props);
-
+		
+		this.doSearch = this.doSearch.bind(this);
 	}
 	
 	doSearch() {
@@ -16,14 +18,11 @@ class GrowToolbar extends React.Component {
 	render() {
 		return (
 			<div className="col-lg-8">
-			
-				<div className="autofit-row autofit-padded text-center">
-					<div className="autofit-col autofit-col-expand">
-						<div className="autofit-section">
-								<h1 className="sheet-title">Explore Articles</h1> 
-						</div>
-					</div>
-				</div>
+				
+				<GrowTitle
+					spritemap={this.props.spritemap}
+					title={this.props.GrowTitle}
+				/>
 			
 				<nav className="management-bar management-bar-light navbar navbar-expand-md">
 					<div className="container">
@@ -37,6 +36,7 @@ class GrowToolbar extends React.Component {
 								>
 									<div className="input-group">
 										<div className="input-group-item">
+										
 											<ul className="navbar-nav filter-control">
 												<li className="dropdown nav-item">
 													<a aria-expanded="false" aria-haspopup="true" className="dropdown-toggle navbar-breakpoint-down-d-none blue-color" data-toggle="dropdown" href="#1" role="button">
@@ -56,13 +56,14 @@ class GrowToolbar extends React.Component {
 													</a>
 													
 													<GrowDropDown
-														spritemap={this.props.spritemap}
 														searchFilter={this.props.searchFilter}
 													/>
 
 												</li>
 											</ul>
+											
 											<input className="form-control input-group-inset input-group-inset-after white-background-color search-control" placeholder="Search..." type="text"/>
+											
 											<span className="input-group-inset-item input-group-inset-item-after white-background-color">
 												<button className="btn btn-unstyled navbar-breakpoint-d-none" type="button">
 													<GrowIcon
@@ -83,9 +84,11 @@ class GrowToolbar extends React.Component {
 													/>
 												</button>
 											</span>
+											
 										</div>
 									</div>
 								</form>
+								
 								<div className="autofit-row text-right">
 									<div className="autofit-col autofit-col-expand">
 										<div className="autofit-section">
@@ -98,6 +101,7 @@ class GrowToolbar extends React.Component {
 						
 							</div>
 						</div>
+						
 						<ul className="navbar-nav">
 							<li className="nav-item navbar-breakpoint-d-none">
 								<a className="nav-link nav-link-monospaced" href="#1" role="button">
@@ -109,6 +113,7 @@ class GrowToolbar extends React.Component {
 								</a>
 							</li>
 						</ul>
+						
 					</div>
 				</nav>
 

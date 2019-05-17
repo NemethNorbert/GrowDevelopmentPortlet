@@ -30,14 +30,14 @@ const GrowToolbarData = {
 	searchFormName: "grow-search",
 	searchFilter: [{label: "Content Type", 
 						items: [
-							{id: "contenttype-all", name: "contenttype", label: "All", type: "radio"},
+							{id: "contenttype-all", name: "contenttype", label: "All", type: "radio", checked: true},
 							{id: "contenttype-wikis", name: "contenttype", label: "Wikis", type: "radio"},
 							{id: "contenttype-files", name: "contenttype", label: "Files", type: "radio"},
 							{id: "contenttype-discussions", name: "contenttype", label: "Discussions", type: "radio"}
 					]},
 					{label: "Date",
 						items: [
-							{id: "date-all", name: "contenttype", label: "Anytime", type: "radio"},
+							{id: "date-all", name: "contenttype", label: "Anytime", type: "radio", checked: true},
 							{id: "date-lasthour", name: "contenttype", label: "Last Hour", type: "radio"},
 							{id: "date-last24hours", name: "contenttype", label: "Last 24 Hours", type: "radio"},
 							{id: "date-lastweek", name: "contenttype", label: "Last Week", type: "radio"},
@@ -45,6 +45,8 @@ const GrowToolbarData = {
 							{id: "date-lastyear", name: "contenttype", label: "Last Year", type: "radio"}
 					]}]
 };
+
+const GrowTitle = "Explore Articles";
 
 class App extends React.Component {
 	render() {
