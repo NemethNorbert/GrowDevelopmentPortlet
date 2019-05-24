@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 import GrowCard from "./modules/GrowCard.es";
 import GrowToolbar from './modules/GrowToolbar.es'; 
-// import GrowList from './modules/GrowList.es';
+import GrowList from './modules/GrowList.es';
 import GrowFavouritesCard from './modules/GrowFavouritesCard.es';
 
 
@@ -21,8 +21,14 @@ const GrowCardData = {
 	articleCategory: "Share"
 };
 
-// const GrowFavouritesCardData = {};
-// const GrowListData = {};
+const GrowListData = {
+	articleAuthor: "Gábor Ambrózy",
+	authorAvatar: "/o/GrowFavouritesPortlet/images/0.jpeg",
+	articleTitle: "Respect badge",
+	articleContent:
+		'A respect badge can be given by anyone to anyone. You can give 1 badge per month. You can use the Respect badge page to add badges. To give a respect badge, @ mention the name in the table, write your name to the From column and write the reason, why do you give it. The reason has to be for a "superpower", something why you respect the other person and something which you would like to learn from them. For Support Hungary 2016Q3 goals, you have to give min. 1 respect badge until Sept 30. If there will be need, we will add gamification to Grow later on.',
+	articleCategory: "Share"
+};
 
 const GrowToolbarData = {
 	searchActionURL: "http://localhost:8080",
@@ -125,6 +131,11 @@ class App extends React.Component {
 					searchFilter={GrowToolbarData.searchFilter}
 				/>
 
+				<div className="col-lg-12">
+					<GrowList 
+						spritemap={spritemap}
+					/>
+				</div>
 			</div>
 		);
 	}

@@ -58,25 +58,25 @@ class GrowFavouritesCard extends React.Component {
                             case 'Excellence':
                             return <GrowIcon
                                 spritemap={this.props.spritemap}
-                                classes="lexicon-icon inline-item inline-item-before"
+                                classes="lexicon-icon inline-item inline-item-before icon-excellence"
                                 iconName="sheets"
                             />;
                             case 'Learn':
                             return <GrowIcon
                                 spritemap={this.props.spritemap}
-                                classes="lexicon-icon inline-item inline-item-before"
+                                classes="lexicon-icon inline-item inline-item-before icon-learn"
                                 iconName="info-book"
                             />;
                             case 'People':
                             return <GrowIcon
                                 spritemap={this.props.spritemap}
-                                classes="lexicon-icon inline-item inline-item-before"
+                                classes="lexicon-icon inline-item inline-item-before icon-people"
                                 iconName="user"
                             />;
                             default:
                             return <GrowIcon
                                 spritemap={this.props.spritemap}
-                                classes="lexicon-icon inline-item inline-item-before"
+                                classes="lexicon-icon inline-item inline-item-before icon-share"
                                 iconName="share"
                             />;
                         }
