@@ -1,48 +1,55 @@
 import React from "react";
+import ClayLabel from '@clayui/label';
 
-
-
-
-class GrowTagList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div className="autofit-section">
-        {this.props.articleTags.slice(0, this.props.numOfDisplayed).map((tag, index) => {
-          return (
-            <span key={index} className="label label-lg text-uppercase">
-              <span className="label-info label-item label-item-expand">
-                {tag}
-              </span>
-            </span>
-          );
-        })
-        }
-        {this.props.articleTags.length > this.props.numOfDisplayed && 
-          (
-              <span
-                className="label label-lg text-uppercase label-remaining-tags"
-                data-toggle="tooltip"
-                data-placement="right"
-                title={this.props.articleTags.slice(this.props.numOfDisplayed, this.props.articleTags.length)}
-              >
-                <span className="label-info label-item label-item-expand">
-                  + {this.props.articleTags.length - this.props.numOfDisplayed}
+const GrowTagList = (props) => {
+    if (props.articleTags) {
+      return (
+        <div className="autofit-section grow-card-label">
+          {props.articleTags
+            .slice(0, props.tagCount)
+            .map((tag, index) => {
+              return (
+                <span
+                  key={index}
+                >
+                  {tag.length <= 10 && (
+                    <ClayLabel displayType="info" spritemap={props.spritemap}>{tag}</ClayLabel>
+                  )}
+                  {tag.length > 10 && (
+                    <ClayLabel 
+                      displayType="info" 
+                      data-toggle="tooltip"
+                      data-placement="right"
+                      title={tag}
+                      spritemap={props.spritemap}>
+                        {tag.substring(0, 10) + "..."}
+                      </ClayLabel>
+                  )}
                 </span>
-              </span>
+              );
+            })}
+          {props.articleTags.length > props.tagCount && (
+            <span
+              data-toggle="tooltip"
+              data-placement="right"
+              title={props.articleTags.slice(
+                props.tagCount,
+                props.articleTags.length
+              )}
+              spritemap={props.spritemap}>
+                + {props.articleTags.length - props.tagCount}
+            </span>
           )
         }
       </div>
     );
+  } else {
+    return <div className="autofit-section grow-card-tag"></div>;
   }
 }
 
-GrowTagList.defaultProps = 
-{
-  numOfDisplayed : 3,
-}
+GrowTagList.defaultProps = {
+  tagCount: 2
+};
 
 export default GrowTagList;

@@ -1,70 +1,146 @@
 import React from 'react';
+import ClayList from '@clayui/list';
+import ClayIcon from "@clayui/icon";
+import {ClayIconSpriteContext} from "@clayui/icon"
+import TextTruncate from 'react-text-truncate';
 
+import GrowTagList from './GrowTagList.es';
 
 const GrowList = (props) => {
     return (
-        <div className="col-lg-4">
-            <li className="list-group-item list-group-item-flex">
-                <div className="autofit-col">
-                    <div className="custom-control custom-checkbox">
-                        <label>
-                            <input className="custom-control-input" type="checkbox"/>
-                            <span className="custom-control-indicator"></span>
-                        </label>
+        <div className="grow-list">
+        <ClayList.Item header className={"grow-list-header"}>
+            <ClayList.ItemField>
+            <div className="autofit-col grow-user-profile">
+                <div className="autofit-section">
+                    {props.articleAuthorAvatar ?
+                    (<img
+                        alt=""
+                        className="img-fluid sticker sticker-primary sticker-xl rounded-circle"
+                        src={props.articleAuthorAvatar}
+                    />) :
+                    <div className="img-fluid sticker sticker-primary sticker-xl rounded-circle">
+                        {props.userInitials || "Grow"}
                     </div>
+                    }
                 </div>
-                <div className="autofit-col">
-                    <div className="sticker sticker-secondary">
-                        <span className="inline-item">
-                            <svg className="lexicon-icon lexicon-icon-folder" focusable="false" role="presentation">
-                                <use xlinkHref={props.spritemap+"/clay/icons.svg#folder"} />
-                            </svg>
-                        </span>
-                    </div>
-                </div>
-                <div className="autofit-col autofit-col-expand">
-                    <h4 className="list-group-title text-truncate">
-                        <a href="#1">Account Example One</a>
-                    </h4>
-                    <p className="list-group-subtitle text-truncate">Second Level Text</p>
-                </div>
-                <div className="autofit-col">
-                    <div className="quick-action-menu">
-                        <a className="component-action quick-action-item" href="#1" role="button">
-                            <svg className="lexicon-icon lexicon-icon-trash" focusable="false" role="presentation">
-                                <use xlinkHref={props.spritemap+"/clay/icons.svg#trash"} />
-                            </svg>
-                        </a>
-                        <a className="component-action quick-action-item" href="#1" role="button">
-                            <svg className="lexicon-icon lexicon-icon-download" focusable="false" role="presentation">
-                                <use xlinkHref={props.spritemap+"/clay/icons.svg#download"} />
-                            </svg>
-                        </a>
-                        <a className="component-action quick-action-item" href="#1" role="button">
-                            <svg className="lexicon-icon lexicon-icon-info-circle-open" focusable="false" role="presentation">
-                                <use xlinkHref={props.spritemap+"/clay/icons.svg#info-circle-open"} />
-                            </svg>
-                        </a>
-                    </div>
-                    <div className="dropdown dropdown-action">
-                        <a aria-expanded="false" aria-haspopup="true" className="component-action dropdown-toggle" data-toggle="dropdown" href="#1" id="dropdownAction1" role="button">
-                            <svg className="lexicon-icon lexicon-icon-ellipsis-v" focusable="false" role="presentation">
-                                <use xlinkHref={props.spritemap+"/clay/icons.svg#ellipsis-v"} />
-                            </svg>
-                        </a>
-                        <div aria-labelledby="" className="dropdown-menu dropdown-menu-right">
-                            <ul className="list-unstyled">
-                                <li><a className="dropdown-item" href="#1" role="button">Remove</a></li>
-                                <li><a className="dropdown-item" href="#1" role="button">Edit</a></li>
-                                <li><a className="dropdown-item" href="#1" role="button">Move</a></li>
-                                <li><a className="dropdown-item" href="#1" role="button">Checkout</a></li>
-                            </ul>
+            </div>
+            </ClayList.ItemField>
+            <ClayList.ItemField expand>
+                <div className="autofit-col autofit-col-expand grow-user-name">
+                    <div className="autofit-section text-secondary">
+                        <div className="grow-author">{props.articleAuthor}</div>
+                        <div>
+                        {props.articleCreateDate}
                         </div>
                     </div>
                 </div>
-            </li>
-        </div>
+            </ClayList.ItemField>
+            <ClayList.ItemField>
+                <div className="autofit-col">
+                    <div className="autofit-section">
+                        <button
+                        className="btn grow-btn btn-outline-secondary btn-outline-borderless"
+                        type="button"
+                        >
+                            {props.star && (
+                                <ClayIcon symbol="star" spritemap={props.spritemap}/>
+                            )}
+                            {props.star == false && (
+                                <ClayIcon symbol="star-o"  spritemap={props.spritemap} />
+                            )}
+                        </button>
+                        <button
+                        className="btn grow-btn btn-outline-secondary btn-outline-borderless"
+                        type="button"
+                        >
+                            <ClayIconSpriteContext.Provider value={props.spritemap}>
+                                {props.like && (
+                                    <ClayIcon className="thumbs-up-liked" symbol="thumbs-up" />
+                                )}
+                                {props.like == false && (
+                                    <ClayIcon className="thumbs-up" symbol="thumbs-up" />
+                                )}
+                            </ClayIconSpriteContext.Provider>
+                        </button>
+                    </div>
+                </div>
+            </ClayList.ItemField>
+        </ClayList.Item>
+        <ClayList.Item className={"grow-list-body"}>
+            <ClayList.ItemField expand>
+                <ClayList.ItemTitle className={"grow-list-title"}><a
+                    href={
+                        props.portalUrl +
+                        "/" +
+                        props.articleCategory +
+                        "/" +
+                        props.articleTitle
+                        .split(" ")
+                        .join("+")
+                        .replace(/'/g, '_APOSTROPHE_')
+                        .toLowerCase()
+                    }
+                    >
+                        {props.articleTitle}
+                    </a>
+                </ClayList.ItemTitle>
+                <span className="grow-margin-bottom grow-list-content">
+                    <TextTruncate
+                        line={2}
+                        truncateText="…"
+                        text={props.articleContent}
+                    >
+                    </TextTruncate>
+                </span>
+            </ClayList.ItemField>
+            <div className="autofit-row autofit-padded">
+                <div className="autofit-section autofit-col-expand">
+                    {props.articleTags &&
+                        <GrowTagList articleTags={props.articleTags} tagCount={props.tagCount || undefined}/>
+                    }
+                </div>
+                <div className="autofit-col">
+                <div className="grow-card-footer autofit-section mx-1">
+                        {(() => {
+                        switch (props.articleCategory) {
+                            case "Excellence":
+                            return (
+                                <ClayIcon
+                                spritemap={props.spritemap}
+                                symbol="sheets"
+                                />
+                            );
+                            case "Learn":
+                            return (
+                                <ClayIcon
+                                spritemap={props.spritemap}
+                                symbol="info-book"
+                                />
+                            );
+                            case "People":
+                            return (
+                                <ClayIcon
+                                spritemap={props.spritemap}
+                                symbol="user"
+                                />
+                            );
+                            default:
+                            return (
+                                <ClayIcon
+                                spritemap={props.spritemap}
+                                symbol="share"
+                                />
+                            );
+                        }
+                        })()}
+                        <span className="grow-card-category mx-1">{props.articleCategory}</span>
+                    </div>
+                </div>
+            </div>
+        </ClayList.Item>
+    </div>
     );
-}
+  };
 
-export default GrowList;
+  export default GrowList;

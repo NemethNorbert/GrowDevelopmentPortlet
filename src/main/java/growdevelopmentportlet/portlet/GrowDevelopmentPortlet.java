@@ -1,6 +1,6 @@
-package growfavouritesportlet.portlet;
+package growdevelopmentportlet.portlet;
 
-import growfavouritesportlet.constants.GrowFavouritesPortletKeys;
+import growdevelopmentportlet.constants.GrowDevelopmentPortletKeys;
 
 import com.liferay.frontend.js.loader.modules.extender.npm.NPMResolver;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
@@ -26,13 +26,13 @@ import org.osgi.service.component.annotations.Reference;
 		"com.liferay.portlet.instanceable=true",
 		"javax.portlet.init-param.template-path=/",
 		"javax.portlet.init-param.view-template=/view.jsp",
-		"javax.portlet.name=" + GrowFavouritesPortletKeys.GrowFavourites,
+		"javax.portlet.name=" + GrowDevelopmentPortletKeys.GrowDevelopment,
 		"javax.portlet.resource-bundle=content.Language",
 		"javax.portlet.security-role-ref=power-user,user"
 	},
 	service = Portlet.class
 )
-public class GrowFavouritesPortlet extends MVCPortlet {
+public class GrowDevelopmentPortlet extends MVCPortlet {
 
 	@Override
 	public void doView(
@@ -41,7 +41,7 @@ public class GrowFavouritesPortlet extends MVCPortlet {
 
 		renderRequest.setAttribute(
 			"mainRequire",
-			_npmResolver.resolveModuleName("GrowFavouritesPortlet") + " as main");
+			_npmResolver.resolveModuleName("GrowDevelopmentPortlet") + " as main");
 
 		super.doView(renderRequest, renderResponse);
 	}

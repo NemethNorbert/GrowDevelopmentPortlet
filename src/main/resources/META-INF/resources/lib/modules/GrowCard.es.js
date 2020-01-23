@@ -1,127 +1,172 @@
-import React from "react";
-import GrowIcon from "./GrowIcon.es";
-import GrowCardFooter from "./GrowCardFooter.es.js";
+import ClayCard from '@clayui/card';
+import ClayIcon from "@clayui/icon";
+import {ClayIconSpriteContext} from "@clayui/icon" 
+import React from 'react';
+import TextTruncate from 'react-text-truncate';
+import GrowTagList from './GrowTagList.es';
 
-class GrowCard extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      star: false,
-      like: false
-    };
-    // This binding is necessary to make `this` work in the callback
-    this.toggleStarContent = this.toggleStarContent.bind(this);
-    this.toggleLikeContent = this.toggleLikeContent.bind(this);
-  }
 
-  toggleStarContent() {
-    this.setState(state => ({
-      star: !state.star
-    }));
-  }
-  toggleLikeContent() {
-    this.setState(state => ({
-      like: !state.like
-    }));
-  }
-
-  render() {
+const GrowCard = (props) => {
     return (
-      <div
-        className={"grow-card card card-" + this.props.articleCategory.toLowerCase()}
-      >
-        <div className="card-body">
-          <div className="autofit-row autofit-padded mb-2">
-            <div className="autofit-col">
-              <div className="autofit-section">
-                <img
-                  alt="Author's thumbnail"
-                  className="img-fluid sticker sticker-primary sticker-xl rounded-circle"
-                  src={this.props.articleAuthorAvatar}
-                />
-              </div>
-            </div>
-            <div className="autofit-col autofit-col-expand">
-              <div className="autofit-section text-secondary">
-                <strong>{this.props.articleAuthor}</strong>
-                <br />
-                <span>{this.props.articleCreateDate}</span>
-              </div>
-            </div>
-            <div className="autofit-col">
-              <div className="autofit-section">
-                <button
-                  className="btn btn-outline-secondary btn-outline-borderless"
-                  type="button"
-                  onClick={this.toggleStarContent}
-                >
-                  {this.state.star && (
-                    <GrowIcon
-                      spritemap={this.props.spritemap}
-                      classes="lexicon-icon inline-item"
-                      iconName="star"
-                    />
-                  )}
-                  {this.state.star == false && (
-                    <GrowIcon
-                      spritemap={this.props.spritemap}
-                      classes="lexicon-icon inline-item"
-                      iconName="star-o"
-                    />
-                  )}
-                </button>
-
-                <button
-                  className="btn btn-outline-secondary btn-outline-borderless"
-                  type="button"
-                  onClick={this.toggleLikeContent}
-                >
-                  {this.state.like && (
-                    <GrowIcon
-                      spritemap={this.props.spritemap}
-                      classes="lexicon-icon thumbs-up-liked"
-                      iconName="thumbs-up"
-                    />
-                  )}
-                  {this.state.like == false && (
-                    <GrowIcon
-                      spritemap={this.props.spritemap}
-                      classes="lexicon-icon"
-                      iconName="thumbs-up"
-                    />
-                  )}
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className="autofit-row autofit-padded">
-            <div className="autofit-col autofit-col-expand">
-              <div className="autofit-section">
-                <h2>{this.props.articleTitle}</h2>
-              </div>
-            </div>
-          </div>
-
-          <div className="autofit-row autofit-padded">
-            <div className="autofit-col autofit-col-expand">
-              <div className="autofit-section">
-                <div className="text-secondary">
-                  {this.props.articleContent}
+        <ClayCard className={props.interactive ? ("mx-1 grow-card interactive card-") +
+            props.articleCategory.toLowerCase() :
+            ("mx-1 grow-card ") +
+            "card-" +
+            props.articleCategory.toLowerCase()
+        }>
+            <div className="autofit-row autofit-padded">
+                <div className="autofit-col grow-user-profile">
+                    <div className="autofit-section">
+                        {props.articleAuthorAvatar ?
+                        (<img
+                            alt=""
+                            className="img-fluid sticker sticker-primary sticker-xl rounded-circle"
+                            src={props.articleAuthorAvatar}
+                        />) :
+                        <div className="img-fluid sticker sticker-primary sticker-xl rounded-circle">{props.userInitials || "Grow"}</div>
+                        }
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <GrowCardFooter
-            articleTags={this.props.articleTags}
-            spritemap={this.props.spritemap}
-            articleReadCount={this.props.articleReadCount}
-            articleCategory={this.props.articleCategory}
-          />
-        </div>
-      </div>
-    );
-  }
-}
+                <div className="autofit-col autofit-col-expand grow-user-name">
+                    <div className="autofit-section text-secondary">
+                        <div className="grow-author">{props.articleAuthor}</div>
+                        <div>
+                        {props.articleCreateDate}
+                        </div>
+                    </div>
+                </div>
+                <div className="autofit-col">
+                    <div className="autofit-section">
+                        <button
+                        className="btn grow-btn btn-outline-secondary btn-outline-borderless"
+                        type="button"
+                        >
+                        {props.star && (
+                            <ClayIcon symbol="star" spritemap={props.spritemap}/>
+                        )}
+                        {props.star == false && (
+                            <ClayIcon symbol="star-o"  spritemap={props.spritemap} />
+                        )}
+                        </button>
 
-export default GrowCard;
+                        <button
+                        className="btn grow-btn btn-outline-secondary btn-outline-borderless"
+                        type="button"
+                        >
+                        <ClayIconSpriteContext.Provider value={props.spritemap}>
+                        {props.like && (
+                            <ClayIcon className="thumbs-up-liked" symbol="thumbs-up" />
+                        )}
+                        {props.like == false && (
+                            <ClayIcon symbol="thumbs-up" />
+                        )}
+                        </ClayIconSpriteContext.Provider>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <ClayCard.Body>
+            <ClayCard.Description className="grow-card-section grow-card-title" truncate={true} displayType="title">
+                <a
+                href={
+                    props.portalUrl +
+                    "/" +
+                    props.articleCategory +
+                    "/" +
+                    props.articleTitle
+                    .split(" ")
+                    .join("+")
+                    .replace(/'/g, '_APOSTROPHE_')
+                    .toLowerCase()
+                }
+                >
+                    {props.articleTitle}
+                </a>
+            </ClayCard.Description>
+            <span className="card-text grow-card-content">
+                <TextTruncate
+                    line={4}
+                    truncateText="…"
+                    text={props.articleContent}
+                    className="grow-card-section"
+                >
+                </TextTruncate>
+            </span>
+            <div className="autofit-row autofit-padded">
+                
+                <div className="autofit-section autofit-col-expand">
+                    {props.articleTags &&
+                        <GrowTagList articleTags={props.articleTags} tagCount={props.tagCount || undefined}/>
+                    }
+                </div>
+                <div className="autofit-col">
+                    <div className="autofit-section text-secondary">
+                        {props.articleReadCount ? (
+                            <React.Fragment>
+                                <ClayIcon
+                                    spritemap={props.spritemap}
+                                    symbol="view"
+                                    />
+                                <span className="mx-1">{props.articleReadCount}</span>
+                            </React.Fragment> 
+                        ) : (<React.Fragment>
+                            <ClayIcon
+                                spritemap={props.spritemap}
+                                symbol="view"
+                                className="hide"
+                                />
+                            <span className="mx-1">{props.articleReadCount}</span>
+                        </React.Fragment> )
+                        }
+                    </div>
+                </div>
+            </div>
+            </ClayCard.Body>
+            <div className="autofit-row text-center">
+                <div className="autofit-col autofit-col-expand">
+                    <div className="grow-card-footer autofit-section mx-1">
+                        {(() => {
+                        switch (props.articleCategory) {
+                            case "Excellence":
+                            return (
+                                <ClayIcon
+                                spritemap={props.spritemap}
+                                symbol="sheets"
+                                />
+                            );
+                            case "Learn":
+                            return (
+                                <ClayIcon
+                                spritemap={props.spritemap}
+                                symbol="info-book"
+                                />
+                            );
+                            case "People":
+                            return (
+                                <ClayIcon
+                                spritemap={props.spritemap}
+                                symbol="user"
+                                />
+                            );
+                            default:
+                            return (
+                                <ClayIcon
+                                spritemap={props.spritemap}
+                                symbol="share"
+                                />
+                            );
+                        }
+                        })()}
+                        <span className="grow-card-category mx-1">{props.categorytoUpperCase ? props.articleCategory.toUpperCase() : props.articleCategory}</span>
+                    </div>
+                </div>
+            </div>
+        </ClayCard>
+    );
+  };
+
+  GrowCard.defaultProps = {
+    articleCategory: "Share"
+  };
+
+  export default GrowCard;

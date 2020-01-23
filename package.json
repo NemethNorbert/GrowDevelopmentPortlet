@@ -1,9 +1,11 @@
 {
 	"dependencies": {
+		"@clayui/css": "^3.3.0",
+		"@clayui/list": "^3.0.4",
+		"grow-clay": "^0.1.1",
 		"prop-types": "15.7.2",
-		"react": "15.6.2",
-		"react-dom": "15.6.2",
-		"react-text-truncate": "^0.14.1"
+		"react": "16.8.2",
+		"react-dom": "16.8.2"
 	},
 	"devDependencies": {
 		"babel-cli": "^6.26.0",
@@ -12,7 +14,7 @@
 		"liferay-npm-bundler": "^2.0.0"
 	},
 	"main": "lib/index.es.js",
-	"name": "GrowFavouritesPortlet",
+	"name": "GrowDevelopmentPortlet",
 	"scripts": {
 		"build": "babel --source-maps -d build/resources/main/META-INF/resources src/main/resources/META-INF/resources && liferay-npm-bundler"
 	},

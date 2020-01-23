@@ -1,29 +1,106 @@
-.excellence-growlistcategory {
-	color: #fcb2aa;
-}
+.grow-list {
+	.grow-author {
+		font-family: 'Source Sans Pro', sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		line-height: 19px;
+	}
 
-.learn-growlistcategory {
-	color: #8c66b2;
-}
+	.grow-list-title {
+		font-family: 'Source Sans Pro', sans-serif;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 23px;
+		margin-bottom: 0.5rem;
+	}
 
-.people-growlistcategory {
-	color: #7fffff;
-}
+	.grow-card-label {
+		font-size: 10px;
+		text-transform: uppercase;
+		margin-top: 0.3rem;
+	}
 
-.share-growlistcategory {
-	color: #66b2ff;
-}
+	.grow-list-content {
+		font-family: 'Source Sans Pro', sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		line-height: 22px;
+	}
 
-.listwidth {
-    width: 100%;
-}
+	.grow-user-profile {
+		padding: 0.5rem 0rem 0rem 0rem;
+	}
 
-.category-padding {
-	padding: 0.4375rem 0.7375rem;
-}
+	.grow-user-name {
+		padding: 1rem 0rem 0rem 0.5rem;
+	}
 
-.list-border {
-	border-bottom: 0.1rem solid rgba(0, 0, 0, 0.125);
-	border-radius: 1px;
-	padding-top: 0.7375rem;
+	.grow-list-header.list-group-header {
+		background-color: #fff;
+		border: 0;
+		padding-bottom: 0;
+	}
+	
+	.grow-list-body.list-group-item {
+		border: 0;
+		border-bottom: 1px solid #EBEEF2;
+	}
+
+	.grow-margin-bottom {
+		margin-bottom: 0.75rem;
+	}
+
+	.grow-btn {
+		padding: 0.5rem 0.5rem;
+		.lexicon-icon-star-o,
+		.lexicon-icon-star {
+			fill: #FDCC4A;
+		}
+
+		.thumbs-up {
+			fill: #B3CDFF;
+		}
+
+		.thumbs-up-liked {
+			fill: #0B5FFF;
+		}
+	}
+
+	.lexicon-icon {
+		
+		&.lexicon-icon-info-book {
+			fill: #8c66b2;
+
+			& + .grow-card-category {
+				color: #8c66b2;
+			}
+		}
+
+		&.lexicon-icon-user {
+			fill: #47C6F5;
+
+			& + .grow-card-category {
+				color: #47C6F5;
+			}
+		}
+
+		&.lexicon-icon-share {
+			fill: #42BFC2;
+
+			& + .grow-card-category {
+				color: #42BFC2;
+			}
+		}
+
+		&.lexicon-icon-sheets {
+			fill: #fa8072;
+
+			& + .grow-card-category {
+				color: #fa8072;
+			}
+		}
+	}
 }
